@@ -191,10 +191,10 @@ public class Sapi extends javax.swing.JFrame {
             txtBB.setText("Berat Badan = " + String.valueOf(hasil));
             int harga;
             if (cmbJK.getSelectedIndex() == 1) {
-                harga = (int) (hasil * 150000) + 200000;
+                harga = (int) (hasil * 75000) + 200000;
                 txtHarga.setText("Harga = Rp. "+harga);
             } else {
-                harga = (int) (hasil * 150000);
+                harga = (int) (hasil * 75000);
                 txtHarga.setText("Harga = Rp. "+harga);
             }
 

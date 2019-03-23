@@ -6,6 +6,7 @@
 package project;
 
 import java.awt.Color;
+import java.awt.Cursor;
 
 /**
  *
@@ -96,6 +97,7 @@ public class Home extends javax.swing.JFrame {
     private void KambingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KambingMouseEntered
         // TODO add your handling code here:
         Kambing.setForeground(new Color(0, 70, 70));
+        Kambing.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_KambingMouseEntered
 
     private void KambingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KambingMouseExited
@@ -114,6 +116,7 @@ public class Home extends javax.swing.JFrame {
     private void SapiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SapiMouseEntered
         // TODO add your handling code here:
         Sapi.setForeground(new Color(0, 70, 70));
+        Sapi.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_SapiMouseEntered
 
     private void SapiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SapiMouseExited
