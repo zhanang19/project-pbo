@@ -169,6 +169,9 @@ public class Kalkulator extends javax.swing.JFrame {
         if (txtLD.getText().equals("") && txtPB.getText().equals("") &&
             txtUsia.getText().equals("") && cmbJK.getSelectedIndex() == 0) {
             pesan.setText("LENGKAPI DATA!!!");
+            txtJudulHasil.setText("");
+            txtBB.setText("");
+            txtHarga.setText("");
             pesan.setForeground(Color.red);
         } else {
             pesan.setText("");
