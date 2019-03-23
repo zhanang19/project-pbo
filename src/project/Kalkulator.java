@@ -81,45 +81,59 @@ public class Kalkulator extends javax.swing.JFrame {
         txtBB = new javax.swing.JLabel();
         btnHitung = new javax.swing.JButton();
         pesan = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kalkulator Hewan Ternak Kambing");
-        setPreferredSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 250));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Jenis Kelamin :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         cmbJK.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Jantan", "Betina" }));
         jPanel1.add(cmbJK, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Usia :");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Tahun");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, 10));
         jPanel1.add(txtUsia, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 38, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Panjang Badan :");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
         jPanel1.add(txtPB, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 37, -1));
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("cm");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, 10));
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Lingkar Dada :");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
         jPanel1.add(txtLD, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 39, -1));
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("cm");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, 10));
 
         txtJudulHasil.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        txtJudulHasil.setForeground(new java.awt.Color(255, 255, 255));
         txtJudulHasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(txtJudulHasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 200, 28));
+
+        txtHarga.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtHarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 200, 29));
+
+        txtBB.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtBB, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 200, 29));
 
         btnHitung.setText("HITUNG");
@@ -131,6 +145,10 @@ public class Kalkulator extends javax.swing.JFrame {
         jPanel1.add(btnHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 170, -1));
         jPanel1.add(pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 580, 30));
 
+        background.setForeground(new java.awt.Color(255, 255, 255));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/farm-min.jpg"))); // NOI18N
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 250));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,10 +157,10 @@ public class Kalkulator extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setBounds(0, 0, 600, 275);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
@@ -206,6 +224,7 @@ public class Kalkulator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
     private javax.swing.JButton btnHitung;
     private javax.swing.JComboBox<String> cmbJK;
     private javax.swing.JLabel jLabel2;
