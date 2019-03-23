@@ -9,14 +9,14 @@ package project;
  *
  * @author zha
  */
-public class Project {
+public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Kalkulator k1 = new Kalkulator();
-        k1.setVisible(true);
+        Home h = new Home();
+        h.setVisible(true);
     }
     
 }

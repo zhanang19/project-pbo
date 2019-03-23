@@ -5,13 +5,15 @@
  */
 package project;
 
+import com.sun.javafx.cursor.CursorType;
 import java.awt.Color;
+import java.awt.Cursor;
 
 /**
  *
  * @author zha
  */
-public class Kalkulator extends javax.swing.JFrame {
+public class Kambing extends javax.swing.JFrame {
 
     /**
      * Creates new form LoginGUI
@@ -51,10 +53,10 @@ public class Kalkulator extends javax.swing.JFrame {
         this.ld = ld;
     }
 
-    public Kalkulator() {
+    public Kambing() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -80,6 +82,7 @@ public class Kalkulator extends javax.swing.JFrame {
         txtHarga = new javax.swing.JLabel();
         txtBB = new javax.swing.JLabel();
         btnHitung = new javax.swing.JButton();
+        btnHome = new javax.swing.JLabel();
         pesan = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
@@ -143,6 +146,17 @@ public class Kalkulator extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 170, -1));
+
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/home pressed.png"))); // NOI18N
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnHomeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHomeMouseEntered(evt);
+            }
+        });
+        jPanel1.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 50, 50));
         jPanel1.add(pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 580, 30));
 
         background.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,8 +180,8 @@ public class Kalkulator extends javax.swing.JFrame {
 
     private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
         // TODO add your handling code here:
-        if (txtLD.getText().equals("") && txtPB.getText().equals("") &&
-            txtUsia.getText().equals("") && cmbJK.getSelectedIndex() == 0) {
+        if (txtLD.getText().equals("") || txtPB.getText().equals("") ||
+            txtUsia.getText().equals("") || cmbJK.getSelectedIndex() == 0) {
             pesan.setText("LENGKAPI DATA!!!");
             txtJudulHasil.setText("");
             txtBB.setText("");
@@ -192,6 +206,20 @@ public class Kalkulator extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnHitungActionPerformed
 
+    private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
+        // TODO add your handling code here:
+        btnHome.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        
+    }//GEN-LAST:event_btnHomeMouseEntered
+
+    private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
+        // TODO add your handling code here:
+        btnHome.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        this.dispose();
+        Home h = new Home();
+        h.setVisible(true);
+    }//GEN-LAST:event_btnHomeMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -209,20 +237,21 @@ public class Kalkulator extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Kalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kambing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Kalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kambing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Kalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kambing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Kalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kambing.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Kalkulator().setVisible(true);
+                new Kambing().setVisible(true);
             }
         });
     }
@@ -230,6 +259,7 @@ public class Kalkulator extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JButton btnHitung;
+    private javax.swing.JLabel btnHome;
     private javax.swing.JComboBox<String> cmbJK;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
