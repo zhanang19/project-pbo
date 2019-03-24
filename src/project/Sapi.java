@@ -83,10 +83,12 @@ public class Sapi extends javax.swing.JFrame {
         btnHitung = new javax.swing.JButton();
         btnHome = new javax.swing.JLabel();
         pesan = new javax.swing.JLabel();
+        btnHistory = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kallkulator Hewan Ternak Kambing");
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -152,11 +154,19 @@ public class Sapi extends javax.swing.JFrame {
                 btnHomeMouseEntered(evt);
             }
         });
-        jPanel1.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 50, 50));
-        jPanel1.add(pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 580, 30));
+        jPanel1.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 50, 50));
+        jPanel1.add(pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 300, 30));
+
+        btnHistory.setText("History");
+        btnHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoryActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/blog_easy-ways-help-farm-animal_010218_main.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 300));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,10 +176,10 @@ public class Sapi extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(616, 339));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -181,7 +191,7 @@ public class Sapi extends javax.swing.JFrame {
             txtJudulHasil.setText("");
             txtBB.setText("");
             txtHarga.setText("");
-            pesan.setForeground(Color.red);
+            pesan.setForeground(Color.YELLOW);
         } else {
             pesan.setText("");
             txtJudulHasil.setText("HASIL");
@@ -214,6 +224,13 @@ public class Sapi extends javax.swing.JFrame {
         btnHome.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
     }//GEN-LAST:event_btnHomeMouseEntered
+
+    private void btnHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryActionPerformed
+        // TODO add your handling code here:
+        HistorySapi hs = new HistorySapi();
+        hs.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHistoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +269,7 @@ public class Sapi extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JButton btnHistory;
     private javax.swing.JButton btnHitung;
     private javax.swing.JLabel btnHome;
     private javax.swing.JComboBox<String> cmbJK;

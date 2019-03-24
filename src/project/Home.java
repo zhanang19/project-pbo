@@ -37,6 +37,7 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kalkulator Hewan Ternak");
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -87,16 +88,16 @@ public class Home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(344, 256));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void KambingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_KambingMouseEntered
         // TODO add your handling code here:
-        Kambing.setForeground(new Color(0, 70, 70));
+        Kambing.setForeground(Color.ORANGE);
         Kambing.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_KambingMouseEntered
 
@@ -115,7 +116,7 @@ public class Home extends javax.swing.JFrame {
 
     private void SapiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SapiMouseEntered
         // TODO add your handling code here:
-        Sapi.setForeground(new Color(0, 70, 70));
+        Sapi.setForeground(Color.ORANGE);
         Sapi.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }//GEN-LAST:event_SapiMouseEntered
 

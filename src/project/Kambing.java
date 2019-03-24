@@ -84,11 +84,11 @@ public class Kambing extends javax.swing.JFrame {
         btnHitung = new javax.swing.JButton();
         btnHome = new javax.swing.JLabel();
         pesan = new javax.swing.JLabel();
+        btnHistory = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kalkulator Hewan Ternak Kambing");
-        setPreferredSize(new java.awt.Dimension(600, 250));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -156,8 +156,16 @@ public class Kambing extends javax.swing.JFrame {
                 btnHomeMouseEntered(evt);
             }
         });
-        jPanel1.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 50, 50));
-        jPanel1.add(pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 580, 30));
+        jPanel1.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 50, 50));
+        jPanel1.add(pesan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 300, 20));
+
+        btnHistory.setText("History");
+        btnHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoryActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 210, -1, -1));
 
         background.setForeground(new java.awt.Color(255, 255, 255));
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/farm-min.jpg"))); // NOI18N
@@ -174,7 +182,7 @@ public class Kambing extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(600, 275));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -186,7 +194,7 @@ public class Kambing extends javax.swing.JFrame {
             txtJudulHasil.setText("");
             txtBB.setText("");
             txtHarga.setText("");
-            pesan.setForeground(Color.red);
+            pesan.setForeground(Color.YELLOW);
         } else {
             pesan.setText("");
             txtJudulHasil.setText("HASIL");
@@ -219,6 +227,13 @@ public class Kambing extends javax.swing.JFrame {
         Home h = new Home();
         h.setVisible(true);
     }//GEN-LAST:event_btnHomeMouseClicked
+
+    private void btnHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoryActionPerformed
+        // TODO add your handling code here:
+        HistoryKambing hk = new HistoryKambing();
+        hk.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHistoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,6 +273,7 @@ public class Kambing extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JButton btnHistory;
     private javax.swing.JButton btnHitung;
     private javax.swing.JLabel btnHome;
     private javax.swing.JComboBox<String> cmbJK;
