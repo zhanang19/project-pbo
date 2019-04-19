@@ -22,10 +22,10 @@ public class koneksi {
     
     public Connection getKoneksi() {
         if (koneksi == null) {
-            String url = "jdbc:mysql://localhost:3306/";
-            String database = "penitipanhewan";
-            String username = "root";
-            String password = "";
+            String url = "jdbc:postgres://ec2-23-23-92-204.compute-1.amazonaws.com:5432/";
+            String database = "d9ek16mludg78a";
+            String username = "ttmzwvmtinzjlp";
+            String password = "03d8bbf4fe174f1f3eb76ed041fc241cf90e4d1d9b158f49169c8e4295042f41";
             try {
                 koneksi = (Connection) DriverManager.getConnection(url+database, username, password);
                 System.out.println("Koneksi Berhasil");
