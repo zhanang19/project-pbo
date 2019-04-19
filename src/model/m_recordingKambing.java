@@ -22,7 +22,7 @@ public class m_recordingKambing {
     private Connection koneksi;
 
     public m_recordingKambing() {
-        koneksi = new Config().getKoneksi();
+        koneksi = new Config().createDBConnection();
     }
 
     public DefaultTableModel bacaTabel() {

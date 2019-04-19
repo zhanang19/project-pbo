@@ -16,28 +16,24 @@ import main.Config;
  *
  * @author zha
  */
-public class M_user {
+public class M_animal_type {
 
     private Connection DBConnection;
-    private String tableName = "users";
+    private String tableName = "animal_type";
     
-    public M_user() {
+    public M_animal_type() {
         // get and set connection to local variable
         DBConnection = new Config().createDBConnection();
     }
     
-    public boolean createUser(String name, String email, String password, int level, int status) {
+    public boolean createAnimalType(String animal_type) {
         
         String query = "INSERT into `" + this.getTableName() + "` "
-                     + "SET `name`, `email`, `password`, `level`, `status` "
-                     + "VALUES(?,?,?,?,?);";
+                     + "SET `animal_type` "
+                     + "VALUES(?);";
         try {
             PreparedStatement st = DBConnection.prepareStatement(query);
-            st.setString(1, name);
-            st.setString(2, email);
-            st.setString(3, password);
-            st.setInt(4, level);
-            st.setInt(5, status);
+            st.setString(1, animal_type);
             
             if (st.executeUpdate() > 0) {
                 return true;
@@ -48,8 +44,8 @@ public class M_user {
         return false;
     }
     
+    public 
     
-
     public String getTableName() {
         return tableName;
     }
@@ -57,6 +53,5 @@ public class M_user {
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
-    
     
 }

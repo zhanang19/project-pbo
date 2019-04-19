@@ -20,7 +20,7 @@ public class Config {
         
     }
     
-    public Connection getKoneksi() {
+    public Connection createDBConnection() {
         if (DBConnection == null) {
             String url = "jdbc:postgres://ec2-23-23-92-204.compute-1.amazonaws.com:5432/";
             String database = "d9ek16mludg78a";
