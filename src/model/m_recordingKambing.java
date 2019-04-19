@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import mvc.koneksi;
+import main.Config;
 
 /**
  *
@@ -22,7 +22,7 @@ public class m_recordingKambing {
     private Connection koneksi;
 
     public m_recordingKambing() {
-        koneksi = new koneksi().getKoneksi();
+        koneksi = new Config().getKoneksi();
     }
 
     public DefaultTableModel bacaTabel() {

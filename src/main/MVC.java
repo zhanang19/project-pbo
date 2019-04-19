@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mvc;
+package main;
 
-import control.control;
+import controller.control;
 import view.bantuan;
 import view.kalkulator;
 import view.recordingKambing;
