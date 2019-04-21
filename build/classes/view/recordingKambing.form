@@ -276,16 +276,16 @@
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="11" rowCount="2">
                     <Column editable="true" title="Id" type="java.lang.Integer"/>
-                    <Column editable="true" title="Nama" type="java.lang.String"/>
-                    <Column editable="true" title="Jenis Kelamin" type="java.lang.String"/>
-                    <Column editable="true" title="Tanggal Lahir" type="java.lang.Object"/>
-                    <Column editable="true" title="Jenis Kambing" type="java.lang.String"/>
-                    <Column editable="true" title="Usia" type="java.lang.Integer"/>
-                    <Column editable="true" title="Tinggi" type="java.lang.Float"/>
-                    <Column editable="true" title="Bobot" type="java.lang.Float"/>
-                    <Column editable="true" title="Lokasi Kandang" type="java.lang.String"/>
-                    <Column editable="true" title="Penyakit" type="java.lang.String"/>
-                    <Column editable="true" title="Keterangan" type="java.lang.String"/>
+                    <Column editable="true" title="Animal Name" type="java.lang.String"/>
+                    <Column editable="true" title="Animal Type" type="java.lang.Integer"/>
+                    <Column editable="true" title="Gender" type="java.lang.String"/>
+                    <Column editable="true" title="Birthdate" type="java.lang.Object"/>
+                    <Column editable="true" title="User" type="java.lang.Integer"/>
+                    <Column editable="true" title="Skin Color" type="java.lang.String"/>
+                    <Column editable="true" title="Ear Type" type="java.lang.String"/>
+                    <Column editable="true" title="Type Pet" type="java.lang.Integer"/>
+                    <Column editable="true" title="Updated at" type="java.lang.Object"/>
+                    <Column editable="true" title="Created at" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="autoResizeMode" type="int" value="0"/>

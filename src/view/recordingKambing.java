@@ -184,11 +184,11 @@ public class recordingKambing extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Nama", "Jenis Kelamin", "Tanggal Lahir", "Jenis Kambing", "Usia", "Tinggi", "Bobot", "Lokasi Kandang", "Penyakit", "Keterangan"
+                "Id", "Animal Name", "Animal Type", "Gender", "Birthdate", "User", "Skin Color", "Ear Type", "Type Pet", "Updated at", "Created at"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {

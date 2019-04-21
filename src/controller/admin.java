@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package control;
+package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,53 +12,56 @@ import view.recordingKambing;
 import view.kalkulator;
 import view.bantuan;
 import view.tambah;
+import view.login;
 import model.m_recordingKambing;
+import model.M_user;
+
 
 /**
  *
  * @author ASUS
  */
-public class control {
-
+public class admin {
+    private login viewLogin;
     private recordingKambing viewRecordingKambing;
     private kalkulator viewKalkulator;
     private bantuan viewBantuan;
     private tambah viewTambah;
     private m_recordingKambing model;
+    
+    public admin() {        
+        viewRecordingKambing = new recordingKambing();
+        viewRecordingKambing.setVisible(true);
+        viewRecordingKambing.rKambingListener(new rKambingListener());
+        viewRecordingKambing.kalkulatorListener(new kalkulatorListener());
+        viewRecordingKambing.bantuanListener(new bantuanListener());
+        viewRecordingKambing.keluarListener(new keluarListener());
+        viewRecordingKambing.tambahListener(new tambahListener());
 
-    public control(recordingKambing viewRecordingKambing, kalkulator viewKalkulator, bantuan viewBantuan, tambah viewTambah, m_recordingKambing model) {
-        this.viewRecordingKambing = viewRecordingKambing;
-        this.viewRecordingKambing.setVisible(true);
-        this.viewRecordingKambing.rKambingListener(new rKambingListener());
-        this.viewRecordingKambing.kalkulatorListener(new kalkulatorListener());
-        this.viewRecordingKambing.bantuanListener(new bantuanListener());
-        this.viewRecordingKambing.keluarListener(new keluarListener());
-        this.viewRecordingKambing.tambahListener(new tambahListener());
+        viewKalkulator = new kalkulator();
+        viewKalkulator.rKambingListener(new rKambingListener());
+        viewKalkulator.kalkulatorListener(new kalkulatorListener());
+        viewKalkulator.bantuanListener(new bantuanListener());
+        viewKalkulator.keluarListener(new keluarListener());
+        viewKalkulator.tambahListener(new tambahListener());
+        viewKalkulator.hitungListener(new hitungListener());
 
-        this.viewKalkulator = viewKalkulator;
-        this.viewKalkulator.rKambingListener(new rKambingListener());
-        this.viewKalkulator.kalkulatorListener(new kalkulatorListener());
-        this.viewKalkulator.bantuanListener(new bantuanListener());
-        this.viewKalkulator.keluarListener(new keluarListener());
-        this.viewKalkulator.tambahListener(new tambahListener());
-        this.viewKalkulator.hitungListener(new hitungListener());
+        viewBantuan = new bantuan();
+        viewBantuan.rKambingListener(new rKambingListener());
+        viewBantuan.kalkulatorListener(new kalkulatorListener());
+        viewBantuan.bantuanListener(new bantuanListener());
+        viewBantuan.keluarListener(new keluarListener());
+        viewBantuan.tambahListener(new tambahListener());
 
-        this.viewBantuan = viewBantuan;
-        this.viewBantuan.rKambingListener(new rKambingListener());
-        this.viewBantuan.kalkulatorListener(new kalkulatorListener());
-        this.viewBantuan.bantuanListener(new bantuanListener());
-        this.viewBantuan.keluarListener(new keluarListener());
-        this.viewBantuan.tambahListener(new tambahListener());
-
-        this.viewTambah = viewTambah;
-        this.viewTambah.rKambingListener(new rKambingListener());
-        this.viewTambah.kalkulatorListener(new kalkulatorListener());
-        this.viewTambah.bantuanListener(new bantuanListener());
-        this.viewTambah.keluarListener(new keluarListener());
-        this.viewTambah.tambahListener(new tambahListener());
-        this.viewTambah.simpanListener(new simpanListener());
-
-        this.model = model;
+        viewTambah = new tambah();
+        viewTambah.rKambingListener(new rKambingListener());
+        viewTambah.kalkulatorListener(new kalkulatorListener());
+        viewTambah.bantuanListener(new bantuanListener());
+        viewTambah.keluarListener(new keluarListener());
+        viewTambah.tambahListener(new tambahListener());
+        viewTambah.simpanListener(new simpanListener());
+        
+        model = new m_recordingKambing();
         bacaTabelRecord();
     }
 

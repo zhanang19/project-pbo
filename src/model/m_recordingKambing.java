@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import mvc.koneksi;
+import main.Config;
 
 /**
  *
@@ -22,25 +22,23 @@ public class m_recordingKambing {
     private Connection koneksi;
 
     public m_recordingKambing() {
-        koneksi = new koneksi().getKoneksi();
+        koneksi = new Config().createDBConnection();
     }
 
     public DefaultTableModel bacaTabel() {
-        String query = "SELECT rk.id, rk.nama, jk.jenisKelamin, rk.tglLahir, rk.jenisKambing, rk.usia, rk.tinggi, rk.bobot, rk.lokasiKandang, rk.penyakit, rk.Keterangan\n"
-                + "FROM recording_kambing rk JOIN jenis_kelamin jk\n"
-                + "ON rk.idJenisKelamin = jk.idJenisKelamin;";
+        String query = "SELECT * FROM public.animal LIMIT 100;";
         String namaKolom[] = {
             "Id",
-            "Nama",
-            "Jenis Kelamin",
-            "Tanggal Lahir",
-            "Jenis Kambing",
-            "Usia Kambing",
-            "Tinggi",
-            "Bobot",
-            "Lokasi Kandang",
-            "Penyakit",
-            "Keterangan"
+            "Animal Name",
+            "Animal Type",
+            "Gender",
+            "Birthdate",
+            "User",
+            "Skin Color",
+            "Ear Type",
+            "Type Pet",
+            "Updated at",
+            "Created at"
         };
         DefaultTableModel tabel = new DefaultTableModel(null, namaKolom);
         try {
@@ -50,16 +48,16 @@ public class m_recordingKambing {
 
                 tabel.addRow(new Object[]{
                     rs.getInt("id"),
-                    rs.getString("nama"),
-                    rs.getString("jenisKelamin"),
-                    rs.getDate("tglLahir"),
-                    rs.getString("jenisKambing"),
-                    rs.getInt("usia"),
-                    rs.getFloat("tinggi"),
-                    rs.getFloat("bobot"),
-                    rs.getString("lokasiKandang"),
-                    rs.getString("penyakit"),
-                    rs.getString("keterangan")
+                    rs.getString("animal_name"),
+                    rs.getInt("animal_type"),
+                    rs.getString("gender"),
+                    rs.getDate("birth_date"),
+                    rs.getInt("id_user"),
+                    rs.getString("skin_color"),
+                    rs.getString("ear_type"),
+                    rs.getInt("type_pet"),
+                    rs.getDate("updated_at"),
+                    rs.getDate("created_at")
                 });
             }
         } catch (SQLException e) {

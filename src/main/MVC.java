@@ -3,15 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mvc;
+package main;
 
-import control.control;
-import view.bantuan;
-import view.kalkulator;
-import view.recordingKambing;
-import view.tambah;
-import model.m_recordingKambing;
-
+import model.M_user;
+import view.login;
+import controller.user;
 /**
  *
  * @author ASUS
@@ -22,8 +18,8 @@ public class MVC {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        control control;
-        control = new control(new recordingKambing(),new kalkulator(),new bantuan(),new tambah(), new m_recordingKambing());
+        user control;
+        control = new user(new login(),new M_user());
     }
     
 }
