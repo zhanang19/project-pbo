@@ -26,7 +26,7 @@ public class m_recordingKambing {
     }
 
     public DefaultTableModel bacaTabel() {
-        String query = "SELECT * FROM public.animal LIMIT 100;";
+        String query = "Select a.id, a.animal_name, animal_type.animal_type, a.gender, a.birth_date, users.name, a.skin_color, a.ear_type, type_pet.type_pet, a.updated_at, a.created_at From public.animal a join public.animal_type on a.animal_type = animal_type.id join public.users on a.id_user = users.id join public.type_pet on a.type_pet = type_pet.id;";
         String namaKolom[] = {
             "Id",
             "Animal Name",
@@ -49,13 +49,13 @@ public class m_recordingKambing {
                 tabel.addRow(new Object[]{
                     rs.getInt("id"),
                     rs.getString("animal_name"),
-                    rs.getInt("animal_type"),
+                    rs.getString("animal_type"),
                     rs.getString("gender"),
                     rs.getDate("birth_date"),
-                    rs.getInt("id_user"),
+                    rs.getString("name"),
                     rs.getString("skin_color"),
                     rs.getString("ear_type"),
-                    rs.getInt("type_pet"),
+                    rs.getString("type_pet"),
                     rs.getDate("updated_at"),
                     rs.getDate("created_at")
                 });
