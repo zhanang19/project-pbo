@@ -27,7 +27,7 @@ public class M_user {
     }
     
     public DefaultTableModel readTableUsers() {
-        String query = "SELECT * FROM public.users;";
+        String query = "SELECT u.id, u.name, u.email, u.password, level.level, u.status, u.updated_at, u.created_at FROM public.users u join public.level on u.level = level.id;";
         String namaKolom[] = {"ID", "Nama", "E-Mail", "Password", "Level", "Status", "Updated at", "Created at"};
         DefaultTableModel tabel = new DefaultTableModel(null, namaKolom);
         try {
@@ -40,7 +40,7 @@ public class M_user {
                 data[1] = rs.getString(2);
                 data[2] = rs.getString(3);
                 data[3] = rs.getString(4);
-                data[4] = rs.getInt(5);
+                data[4] = rs.getString(5);
                 data[5] = rs.getInt(6);
                 data[6] = rs.getDate(7);
                 data[7] = rs.getDate(8);

@@ -23,6 +23,7 @@ public class account_admin extends javax.swing.JFrame {
         initComponents();
         menu.setBackground(new Color(0, 0, 0, 40));
         button.setBackground(new Color(0, 0, 0, 40));
+        form.setBackground(new Color(0, 0, 0, 40));
     }
 
     //<editor-fold defaultstate="collapse" desc="ACTION LISTENER">
@@ -103,13 +104,14 @@ public class account_admin extends javax.swing.JFrame {
         name = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         email = new javax.swing.JLabel();
-        cmbAnimalType = new javax.swing.JComboBox<>();
-        gender = new javax.swing.JLabel();
-        cmbGender = new javax.swing.JComboBox<>();
+        txtName1 = new javax.swing.JTextField();
+        password = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
         user = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         skinColor = new javax.swing.JLabel();
         txtSkinColor = new javax.swing.JTextField();
+        form = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -265,23 +267,22 @@ public class account_admin extends javax.swing.JFrame {
         email.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, -1));
 
-        cmbAnimalType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Goat", "Cow" }));
-        cmbAnimalType.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbAnimalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 210, -1));
+        txtName1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtName1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 210, -1));
 
-        gender.setForeground(new java.awt.Color(255, 255, 255));
-        gender.setText("Password");
-        gender.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, -1));
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setText("Password");
+        password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, -1));
 
-        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Male", "Female" }));
-        cmbGender.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 210, -1));
+        jPasswordField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 210, -1));
 
         user.setForeground(new java.awt.Color(255, 255, 255));
         user.setText("Level");
         user.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
 
         txtUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -290,11 +291,26 @@ public class account_admin extends javax.swing.JFrame {
         skinColor.setForeground(new java.awt.Color(255, 255, 255));
         skinColor.setText("Status");
         skinColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(skinColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, -1, -1));
+        jPanel1.add(skinColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, -1, -1));
 
         txtSkinColor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtSkinColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(txtSkinColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, 210, -1));
+
+        form.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout formLayout = new javax.swing.GroupLayout(form);
+        form.setLayout(formLayout);
+        formLayout.setHorizontalGroup(
+            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 750, Short.MAX_VALUE)
+        );
+        formLayout.setVerticalGroup(
+            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 750, 130));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/assets/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 660));
@@ -362,18 +378,19 @@ public class account_admin extends javax.swing.JFrame {
     private javax.swing.JButton btnTAnimal;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel button;
-    private javax.swing.JComboBox<String> cmbAnimalType;
-    private javax.swing.JComboBox<String> cmbGender;
     private javax.swing.JLabel email;
-    private javax.swing.JLabel gender;
+    private javax.swing.JPanel form;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel judul;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel name;
+    private javax.swing.JLabel password;
     private javax.swing.JScrollPane scroll;
     private javax.swing.JLabel skinColor;
     private javax.swing.JTable tabelRecord;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtSkinColor;
     private javax.swing.JTextField txtUser;
     private javax.swing.JLabel user;

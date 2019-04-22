@@ -6,26 +6,21 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
-import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
 
 /**
  *
- * @author User
+ * @author MaulanaKevinPradana
  */
-public class recordingAnimal_admin extends javax.swing.JFrame {
+public class animal_type extends javax.swing.JFrame {
 
     /**
-     * Creates new form beranda
+     * Creates new form type_pet
      */
-    public recordingAnimal_admin() {
+    public animal_type() {
         initComponents();
-
         menu.setBackground(new Color(0, 0, 0, 40));
         button.setBackground(new Color(0, 0, 0, 40));
         form.setBackground(new Color(0, 0, 0, 40));
@@ -68,7 +63,6 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         btnRefresh.addActionListener(a);
     }
     //</editor-fold>
-
     
     //<editor-fold defaultstate="collapse" desc="Tabel">
     public void setTabel(DefaultTableModel t) {
@@ -83,7 +77,7 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         return tabelRecord.getSelectedRow();
     }
     //</editor-fold>
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -110,26 +104,13 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         menu = new javax.swing.JPanel();
         name = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        animalType = new javax.swing.JLabel();
-        cmbAnimalType = new javax.swing.JComboBox<>();
-        gender = new javax.swing.JLabel();
-        cmbGender = new javax.swing.JComboBox<>();
-        birthdate = new javax.swing.JLabel();
-        txtBirthdate = new javax.swing.JTextField();
         user = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
-        skinColor = new javax.swing.JLabel();
-        txtSkinColor = new javax.swing.JTextField();
-        earType = new javax.swing.JLabel();
-        cmbEarType = new javax.swing.JComboBox<>();
-        typePet = new javax.swing.JLabel();
-        cmbTypePet = new javax.swing.JComboBox<>();
         form = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -217,15 +198,15 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
 
         tabelRecord.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Id", "Animal Name", "Animal Type", "Gender", "Birthdate", "User", "Skin Color", "Ear Type", "Type Pet", "Updated at", "Created at"
+                "Id", "Type Pet"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -268,76 +249,22 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         jPanel1.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 380));
 
         name.setForeground(new java.awt.Color(255, 255, 255));
-        name.setText("Name");
+        name.setText("Animal Type");
         name.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, -1, -1));
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, -1, -1));
 
         txtName.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 210, -1));
-
-        animalType.setForeground(new java.awt.Color(255, 255, 255));
-        animalType.setText("Animal Type");
-        animalType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, -1));
-
-        cmbAnimalType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Goat", "Cow" }));
-        cmbAnimalType.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbAnimalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 210, -1));
-
-        gender.setForeground(new java.awt.Color(255, 255, 255));
-        gender.setText("Gender");
-        gender.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, -1));
-
-        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Male", "Female" }));
-        cmbGender.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 210, -1));
-
-        birthdate.setForeground(new java.awt.Color(255, 255, 255));
-        birthdate.setText("Birthdate");
-        birthdate.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(birthdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 570, -1, -1));
-
-        txtBirthdate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtBirthdate.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtBirthdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, 210, -1));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 210, -1));
 
         user.setForeground(new java.awt.Color(255, 255, 255));
-        user.setText("User");
+        user.setText("Type Pet");
         user.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, -1, -1));
 
         txtUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 210, -1));
-
-        skinColor.setForeground(new java.awt.Color(255, 255, 255));
-        skinColor.setText("Skin Color");
-        skinColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(skinColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, -1, -1));
-
-        txtSkinColor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtSkinColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtSkinColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, 210, -1));
-
-        earType.setForeground(new java.awt.Color(255, 255, 255));
-        earType.setText("Ear Type");
-        earType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(earType, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, -1, -1));
-
-        cmbEarType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Big", "Small" }));
-        cmbEarType.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbEarType, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, 210, -1));
-
-        typePet.setForeground(new java.awt.Color(255, 255, 255));
-        typePet.setText("Type Pet");
-        typePet.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 570, -1, -1));
-
-        cmbTypePet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Boer", "Etawa" }));
-        cmbTypePet.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbTypePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 570, 210, -1));
+        jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 490, 210, -1));
 
         form.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -345,14 +272,14 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         form.setLayout(formLayout);
         formLayout.setHorizontalGroup(
             formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
         );
         formLayout.setVerticalGroup(
             formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 70, Short.MAX_VALUE)
         );
 
-        jPanel1.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 770, 160));
+        jPanel1.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 690, 70));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/assets/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 660));
@@ -389,35 +316,27 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animal_type.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animal_type.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animal_type.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animal_type.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new recordingAnimal_admin().setVisible(true);
+                new animal_type().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel animalType;
     private javax.swing.JLabel background;
-    private javax.swing.JLabel birthdate;
     private javax.swing.JButton btnAccount;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCalculator;
@@ -428,25 +347,15 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
     private javax.swing.JButton btnTAnimal;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel button;
-    private javax.swing.JComboBox<String> cmbAnimalType;
-    private javax.swing.JComboBox<String> cmbEarType;
-    private javax.swing.JComboBox<String> cmbGender;
-    private javax.swing.JComboBox<String> cmbTypePet;
-    private javax.swing.JLabel earType;
     private javax.swing.JPanel form;
-    private javax.swing.JLabel gender;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel judul;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel name;
     private javax.swing.JScrollPane scroll;
-    private javax.swing.JLabel skinColor;
     private javax.swing.JTable tabelRecord;
-    private javax.swing.JTextField txtBirthdate;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtSkinColor;
     private javax.swing.JTextField txtUser;
-    private javax.swing.JLabel typePet;
     private javax.swing.JLabel user;
     // End of variables declaration//GEN-END:variables
 }

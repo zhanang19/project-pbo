@@ -12,6 +12,7 @@ import view.recordingAnimal_admin;
 import view.calculator;
 import view.login;
 import view.account_admin;
+import view.animal_type;
 import model.m_recordingAnimal;
 import model.M_user;
 
@@ -25,8 +26,9 @@ public class admin {
     private recordingAnimal_admin viewRecordingAnimal;
     private calculator viewCalculator;
     private m_recordingAnimal modelAnimal;
-    private  M_user modelUsers;
+    private M_user modelUsers;
     private account_admin viewAccount;
+    private animal_type viewAnimalType;
 
     public admin() {
         viewRecordingAnimal = new recordingAnimal_admin();
@@ -42,13 +44,13 @@ public class admin {
         viewRecordingAnimal.refreshListener(new refreshListener());
 
         viewCalculator = new calculator();
-        viewCalculator.rAnimalListener(new rAnimalListener());        
+        viewCalculator.rAnimalListener(new rAnimalListener());
         viewCalculator.accountListener(new accountListener());
         viewCalculator.tAnimalListener(new tAnimalListener());
         viewCalculator.calculatorListener(new calculatorListener());
         viewCalculator.logoutListener(new logoutListener());
         viewCalculator.hitungListener(new hitungListener());
-        
+
         viewAccount = new account_admin();
         viewAccount.rAnimalListener(new rAnimalListener());
         viewAccount.accountListener(new accountListener());
@@ -60,9 +62,20 @@ public class admin {
         viewAccount.updateListener(new updateListener());
         viewAccount.refreshListener(new refreshListener());
 
+        viewAnimalType = new animal_type();
+        viewAnimalType.rAnimalListener(new rAnimalListener());
+        viewAnimalType.accountListener(new accountListener());
+        viewAnimalType.tAnimalListener(new tAnimalListener());
+        viewAnimalType.calculatorListener(new calculatorListener());
+        viewAnimalType.logoutListener(new logoutListener());
+        viewAnimalType.addListener(new addListener());
+        viewAnimalType.deleteListener(new deleteListener());
+        viewAnimalType.updateListener(new updateListener());
+        viewAnimalType.refreshListener(new refreshListener());
+
         modelAnimal = new m_recordingAnimal();
         bacaTabelRecord();
-        
+
         modelUsers = new M_user();
         readTableUsers();
     }
@@ -171,6 +184,7 @@ public class admin {
             viewRecordingAnimal.setVisible(false);
             viewCalculator.setVisible(false);
             viewAccount.setVisible(true);
+            viewAnimalType.setVisible(false);
         }
     }
 
@@ -181,6 +195,7 @@ public class admin {
             viewRecordingAnimal.setVisible(true);
             viewCalculator.setVisible(false);
             viewAccount.setVisible(false);
+            viewAnimalType.setVisible(false);            
         }
     }
 
@@ -191,7 +206,10 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            viewRecordingAnimal.setVisible(false);
+            viewCalculator.setVisible(false);
+            viewAccount.setVisible(false);
+            viewAnimalType.setVisible(true);            
         }
     }
 
