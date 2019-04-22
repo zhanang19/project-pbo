@@ -49,7 +49,7 @@ public class admin {
         viewCalculator.tAnimalListener(new tAnimalListener());
         viewCalculator.calculatorListener(new calculatorListener());
         viewCalculator.logoutListener(new logoutListener());
-        viewCalculator.hitungListener(new hitungListener());
+        viewCalculator.countListener(new countListener());
 
         viewAccount = new account_admin();
         viewAccount.rAnimalListener(new rAnimalListener());
@@ -141,33 +141,33 @@ public class admin {
         }
     }
 
-    private class hitungListener implements ActionListener {
+    private class countListener implements ActionListener {
 
-        public hitungListener() {
+        public countListener() {
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (viewCalculator.getPB().equals("") || viewCalculator.getLD().equals("")
-                    || viewCalculator.getUsia().equals("") || viewCalculator.getJenisKelamin().equals("")) {
-                viewCalculator.setPesan("LENGKAPI DATA!!!");
-                viewCalculator.setTxtJudulHasil("");
-                viewCalculator.setTxtBB("");
-                viewCalculator.setTxtHarga("");
+            if (viewCalculator.getBodyLength().equals("") || viewCalculator.getChestSize().equals("")
+                    || viewCalculator.getAge().equals("") || viewCalculator.getGender().equals("")) {
+                viewCalculator.setMessage("LENGKAPI DATA!!!");
+                viewCalculator.setTxtTitleResult("");
+                viewCalculator.setTxtWeight("");
+                viewCalculator.setTxtPrice("");
             } else {
-                viewCalculator.setPesan("");
-                viewCalculator.setTxtJudulHasil("HASIL");
+                viewCalculator.setMessage("");
+                viewCalculator.setTxtTitleResult("HASIL");
 
-                float hasil = (2 * Float.parseFloat(viewCalculator.getLD()) * Float.parseFloat(viewCalculator.getPB())) / 104;
-                viewCalculator.setTxtBB("Berat Badan = " + String.valueOf(hasil));
+                float hasil = (2 * Float.parseFloat(viewCalculator.getChestSize()) * Float.parseFloat(viewCalculator.getBodyLength())) / 104;
+                viewCalculator.setTxtWeight("Berat Badan = " + String.valueOf(hasil));
 
                 int harga;
-                if (viewCalculator.getJenisKelamin().equals("Jantan")) {
+                if (viewCalculator.getGender().equals("Jantan")) {
                     harga = (int) (hasil * 30000) + 200000;
-                    viewCalculator.setTxtHarga("Harga = Rp. " + harga);
+                    viewCalculator.setTxtPrice("Harga = Rp. " + harga);
                 } else {
                     harga = (int) (hasil * 30000);
-                    viewCalculator.setTxtHarga("Harga = Rp. " + harga);
+                    viewCalculator.setTxtPrice("Harga = Rp. " + harga);
                 }
 
             }
@@ -185,6 +185,7 @@ public class admin {
             viewCalculator.setVisible(false);
             viewAccount.setVisible(true);
             viewAnimalType.setVisible(false);
+            viewLogin.setVisible(false);
         }
     }
 
@@ -195,7 +196,8 @@ public class admin {
             viewRecordingAnimal.setVisible(true);
             viewCalculator.setVisible(false);
             viewAccount.setVisible(false);
-            viewAnimalType.setVisible(false);            
+            viewAnimalType.setVisible(false);
+            viewLogin.setVisible(false);
         }
     }
 
@@ -209,7 +211,8 @@ public class admin {
             viewRecordingAnimal.setVisible(false);
             viewCalculator.setVisible(false);
             viewAccount.setVisible(false);
-            viewAnimalType.setVisible(true);            
+            viewAnimalType.setVisible(true);
+            viewLogin.setVisible(false);
         }
     }
 
@@ -223,6 +226,8 @@ public class admin {
             viewRecordingAnimal.setVisible(false);
             viewCalculator.setVisible(true);
             viewAccount.setVisible(false);
+            viewAnimalType.setVisible(false);
+            viewLogin.setVisible(false);
         }
     }
 
@@ -233,6 +238,11 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+//            viewRecordingAnimal.setVisible(false);
+//            viewCalculator.setVisible(false);
+//            viewAccount.setVisible(false);            
+//            viewAnimalType.setVisible(false);    
+//            viewLogin.setVisible(true);
             System.out.println("Program Berhenti");
             System.exit(0);
         }

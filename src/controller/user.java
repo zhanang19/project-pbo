@@ -31,6 +31,19 @@ public class user {
         this.viewLogin.setVisible(true);
 
         this.viewLogin.loginListener(new loginListener());
+        this.viewLogin.exitListener(new exitListener());
+    }
+
+    private class exitListener implements ActionListener {
+
+        public exitListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Program Berhenti");
+            System.exit(0);
+        }
     }
 
     private class loginListener implements ActionListener {

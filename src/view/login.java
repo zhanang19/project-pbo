@@ -37,6 +37,10 @@ public class login extends javax.swing.JFrame {
     public void lupaPasswordListener(AncestorListener a){
         txtLupaPassword.addAncestorListener(a);
     }
+    
+    public void exitListener(ActionListener a){
+        btnExit.addActionListener(a);
+    }
     //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="GET">
@@ -69,7 +73,7 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        alas = new javax.swing.JPanel();
+        jPanel = new javax.swing.JPanel();
         judul = new javax.swing.JLabel();
         username = new javax.swing.JLabel();
         password = new javax.swing.JLabel();
@@ -80,47 +84,49 @@ public class login extends javax.swing.JFrame {
         txtDaftar = new javax.swing.JLabel();
         panelFormLogin = new javax.swing.JPanel();
         panelDaftarLupaPass = new javax.swing.JPanel();
+        btnExit = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
-        alas.setBackground(new java.awt.Color(102, 102, 102));
-        alas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         judul.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         judul.setForeground(new java.awt.Color(255, 255, 255));
         judul.setText("SISTEM INFORMASI PENITIPAN HEWAN TERNAK");
         judul.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        alas.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 11, -1, -1));
+        jPanel.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 11, -1, -1));
 
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setText("Username");
-        alas.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 84, -1, -1));
+        jPanel.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 84, -1, -1));
 
         password.setForeground(new java.awt.Color(255, 255, 255));
         password.setText("Password");
-        alas.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 157, -1, -1));
+        jPanel.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 157, -1, -1));
 
         txtUsername.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        alas.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 104, 209, 27));
+        jPanel.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 104, 209, 27));
 
         txtPassword.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        alas.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 180, 209, 27));
+        jPanel.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 180, 209, 27));
 
         btnLogin.setText("Login");
         btnLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        alas.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 230, 209, -1));
+        jPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 230, 209, -1));
 
         txtLupaPassword.setForeground(new java.awt.Color(255, 255, 51));
         txtLupaPassword.setText("Lupa password?");
         txtLupaPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        alas.add(txtLupaPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 285, -1, -1));
+        jPanel.add(txtLupaPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 285, -1, -1));
 
         txtDaftar.setForeground(new java.awt.Color(255, 255, 51));
         txtDaftar.setText("Belum punya akun?");
         txtDaftar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        alas.add(txtDaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 285, -1, -1));
+        jPanel.add(txtDaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 285, -1, -1));
 
         panelFormLogin.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -135,7 +141,7 @@ public class login extends javax.swing.JFrame {
             .addGap(0, 200, Short.MAX_VALUE)
         );
 
-        alas.add(panelFormLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 250, 200));
+        jPanel.add(panelFormLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 250, 200));
 
         panelDaftarLupaPass.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -150,20 +156,29 @@ public class login extends javax.swing.JFrame {
             .addGap(0, 25, Short.MAX_VALUE)
         );
 
-        alas.add(panelDaftarLupaPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 250, 25));
+        jPanel.add(panelDaftarLupaPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 250, 25));
+
+        btnExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_close_window_30px.png"))); // NOI18N
+        btnExit.setContentAreaFilled(false);
+        btnExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExit.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnExit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 30, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/bg-login.jpg"))); // NOI18N
-        alas.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 320));
+        jPanel.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 320));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(alas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(alas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -206,9 +221,10 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel alas;
     private javax.swing.JLabel background;
+    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JPanel jPanel;
     private javax.swing.JLabel judul;
     private javax.swing.JPanel panelDaftarLupaPass;
     private javax.swing.JPanel panelFormLogin;
