@@ -17,11 +17,11 @@ import main.Config;
  *
  * @author User
  */
-public class m_recordingKambing {
+public class m_recordingAnimal {
 
     private Connection koneksi;
 
-    public m_recordingKambing() {
+    public m_recordingAnimal() {
         koneksi = new Config().createDBConnection();
     }
 

@@ -26,6 +26,34 @@ public class M_user {
         DBConnection = new Config().createDBConnection();
     }
     
+    public DefaultTableModel readTableUsers() {
+        String query = "SELECT * FROM public.users;";
+        String namaKolom[] = {"ID", "Nama", "E-Mail", "Password", "Level", "Status", "Updated at", "Created at"};
+        DefaultTableModel tabel = new DefaultTableModel(null, namaKolom);
+        try {
+            PreparedStatement st = DBConnection.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Object data[] = new Object[8];
+                
+                data[0] = rs.getInt(1);
+                data[1] = rs.getString(2);
+                data[2] = rs.getString(3);
+                data[3] = rs.getString(4);
+                data[4] = rs.getInt(5);
+                data[5] = rs.getInt(6);
+                data[6] = rs.getDate(7);
+                data[7] = rs.getDate(8);
+                
+                tabel.addRow(data);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            e.getMessage();
+        }
+        return tabel;
+    }
+    
     public boolean createUser(String name, String email, String password, int level, int status) {
         
         String query = "INSERT into `" + this.getTableName() + "` "

@@ -8,106 +8,123 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import view.recordingKambing;
-import view.kalkulator;
-import view.bantuan;
-import view.tambah;
+import view.recordingAnimal_admin;
+import view.calculator;
 import view.login;
-import model.m_recordingKambing;
+import view.account_admin;
+import model.m_recordingAnimal;
 import model.M_user;
-
 
 /**
  *
  * @author ASUS
  */
 public class admin {
+
     private login viewLogin;
-    private recordingKambing viewRecordingKambing;
-    private kalkulator viewKalkulator;
-    private bantuan viewBantuan;
-    private tambah viewTambah;
-    private m_recordingKambing model;
-    
-    public admin() {        
-        viewRecordingKambing = new recordingKambing();
-        viewRecordingKambing.setVisible(true);
-        viewRecordingKambing.rKambingListener(new rKambingListener());
-        viewRecordingKambing.kalkulatorListener(new kalkulatorListener());
-        viewRecordingKambing.bantuanListener(new bantuanListener());
-        viewRecordingKambing.keluarListener(new keluarListener());
-        viewRecordingKambing.tambahListener(new tambahListener());
+    private recordingAnimal_admin viewRecordingAnimal;
+    private calculator viewCalculator;
+    private m_recordingAnimal modelAnimal;
+    private  M_user modelUsers;
+    private account_admin viewAccount;
 
-        viewKalkulator = new kalkulator();
-        viewKalkulator.rKambingListener(new rKambingListener());
-        viewKalkulator.kalkulatorListener(new kalkulatorListener());
-        viewKalkulator.bantuanListener(new bantuanListener());
-        viewKalkulator.keluarListener(new keluarListener());
-        viewKalkulator.tambahListener(new tambahListener());
-        viewKalkulator.hitungListener(new hitungListener());
+    public admin() {
+        viewRecordingAnimal = new recordingAnimal_admin();
+        viewRecordingAnimal.setVisible(true);
+        viewRecordingAnimal.rAnimalListener(new rAnimalListener());
+        viewRecordingAnimal.accountListener(new accountListener());
+        viewRecordingAnimal.tAnimalListener(new tAnimalListener());
+        viewRecordingAnimal.calculatorListener(new calculatorListener());
+        viewRecordingAnimal.logoutListener(new logoutListener());
+        viewRecordingAnimal.addListener(new addListener());
+        viewRecordingAnimal.deleteListener(new deleteListener());
+        viewRecordingAnimal.updateListener(new updateListener());
+        viewRecordingAnimal.refreshListener(new refreshListener());
 
-        viewBantuan = new bantuan();
-        viewBantuan.rKambingListener(new rKambingListener());
-        viewBantuan.kalkulatorListener(new kalkulatorListener());
-        viewBantuan.bantuanListener(new bantuanListener());
-        viewBantuan.keluarListener(new keluarListener());
-        viewBantuan.tambahListener(new tambahListener());
-
-        viewTambah = new tambah();
-        viewTambah.rKambingListener(new rKambingListener());
-        viewTambah.kalkulatorListener(new kalkulatorListener());
-        viewTambah.bantuanListener(new bantuanListener());
-        viewTambah.keluarListener(new keluarListener());
-        viewTambah.tambahListener(new tambahListener());
-        viewTambah.simpanListener(new simpanListener());
+        viewCalculator = new calculator();
+        viewCalculator.rAnimalListener(new rAnimalListener());        
+        viewCalculator.accountListener(new accountListener());
+        viewCalculator.tAnimalListener(new tAnimalListener());
+        viewCalculator.calculatorListener(new calculatorListener());
+        viewCalculator.logoutListener(new logoutListener());
+        viewCalculator.hitungListener(new hitungListener());
         
-        model = new m_recordingKambing();
+        viewAccount = new account_admin();
+        viewAccount.rAnimalListener(new rAnimalListener());
+        viewAccount.accountListener(new accountListener());
+        viewAccount.tAnimalListener(new tAnimalListener());
+        viewAccount.calculatorListener(new calculatorListener());
+        viewAccount.logoutListener(new logoutListener());
+        viewAccount.addListener(new addListener());
+        viewAccount.deleteListener(new deleteListener());
+        viewAccount.updateListener(new updateListener());
+        viewAccount.refreshListener(new refreshListener());
+
+        modelAnimal = new m_recordingAnimal();
         bacaTabelRecord();
+        
+        modelUsers = new M_user();
+        readTableUsers();
     }
 
     private void bacaTabelRecord() {
-        viewRecordingKambing.setTabel(model.bacaTabel());
+        viewRecordingAnimal.setTabel(modelAnimal.bacaTabel());
     }
 
-    private class simpanListener implements ActionListener {
+    private void readTableUsers() {
+        viewAccount.setTabel(modelUsers.readTableUsers());
+    }
+
+    private class addListener implements ActionListener {
+
+        public addListener() {
+        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menambahkan data");
+//            if (model.record(
+//                    
+//            )) {
+//                JOptionPane.showMessageDialog(viewRecordingAnimal, "Data Berhasil ditambahkan");
+//                viewRecordingAnimal.setVisible(true);
+//
+//            } else {
+//                JOptionPane.showMessageDialog(viewRecordingAnimal, "Gagal Menambahkan Data");
+//            }
+        }
+    }
 
-            if (model.record(
-                    viewTambah.getNama(),
-                    viewTambah.getJenisKelamin(),
-                    viewTambah.getTanggalLahir(),
-                    viewTambah.getJenisKambing(),
-                    viewTambah.getUsia(),
-                    viewTambah.getJenisTelinga(),
-                    viewTambah.getWarnaKepala(),
-                    viewTambah.getWarnaBadan(),
-                    viewTambah.getPanjangTelinga(),
-                    viewTambah.getPanjangBadan(),
-                    viewTambah.getLingkarDada(),
-                    viewTambah.getTinggi(),
-                    viewTambah.getBobot(),
-                    viewTambah.getLokasiKandang(),
-                    viewTambah.getPenyakit(),
-                    viewTambah.getKeterangan(),
-                    viewTambah.getTanggalKawin(),
-                    viewTambah.getPerkiraanLahir(),
-                    viewTambah.getLaktasiKe(),
-                    viewTambah.getProduksiSusu(),
-                    viewTambah.getStatus(),
-                    viewTambah.getPejantan(),
-                    viewTambah.getIndukan()
-            )) {
-                JOptionPane.showMessageDialog(viewTambah, "Data Berhasil ditambahkan");
-                viewRecordingKambing.setVisible(true);
-                viewKalkulator.setVisible(false);
-                viewBantuan.setVisible(false);
-                viewTambah.setVisible(false);
+    private class deleteListener implements ActionListener {
 
-            } else {
-                JOptionPane.showMessageDialog(viewTambah, "Gagal Menambahkan Data");
-            }
+        public deleteListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menghapus data");
+        }
+    }
+
+    private class updateListener implements ActionListener {
+
+        public updateListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk memperbarui data");
+        }
+    }
+
+    private class refreshListener implements ActionListener {
+
+        public refreshListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk merefresh data");
         }
     }
 
@@ -118,85 +135,82 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (viewKalkulator.getPB().equals("") || viewKalkulator.getLD().equals("")
-                    || viewKalkulator.getUsia().equals("") || viewKalkulator.getJenisKelamin().equals("")) {
-                viewKalkulator.setPesan("LENGKAPI DATA!!!");
-                viewKalkulator.setTxtJudulHasil("");
-                viewKalkulator.setTxtBB("");
-                viewKalkulator.setTxtHarga("");
+            if (viewCalculator.getPB().equals("") || viewCalculator.getLD().equals("")
+                    || viewCalculator.getUsia().equals("") || viewCalculator.getJenisKelamin().equals("")) {
+                viewCalculator.setPesan("LENGKAPI DATA!!!");
+                viewCalculator.setTxtJudulHasil("");
+                viewCalculator.setTxtBB("");
+                viewCalculator.setTxtHarga("");
             } else {
-                viewKalkulator.setPesan("");
-                viewKalkulator.setTxtJudulHasil("HASIL");
+                viewCalculator.setPesan("");
+                viewCalculator.setTxtJudulHasil("HASIL");
 
-                float hasil = (2 * Float.parseFloat(viewKalkulator.getLD()) * Float.parseFloat(viewKalkulator.getPB())) / 104;
-                viewKalkulator.setTxtBB("Berat Badan = " + String.valueOf(hasil));
+                float hasil = (2 * Float.parseFloat(viewCalculator.getLD()) * Float.parseFloat(viewCalculator.getPB())) / 104;
+                viewCalculator.setTxtBB("Berat Badan = " + String.valueOf(hasil));
 
                 int harga;
-                if (viewKalkulator.getJenisKelamin().equals("Jantan")) {
+                if (viewCalculator.getJenisKelamin().equals("Jantan")) {
                     harga = (int) (hasil * 30000) + 200000;
-                    viewKalkulator.setTxtHarga("Harga = Rp. " + harga);
+                    viewCalculator.setTxtHarga("Harga = Rp. " + harga);
                 } else {
                     harga = (int) (hasil * 30000);
-                    viewKalkulator.setTxtHarga("Harga = Rp. " + harga);
+                    viewCalculator.setTxtHarga("Harga = Rp. " + harga);
                 }
 
             }
         }
     }
 
-    private class rKambingListener implements ActionListener {
+    private class accountListener implements ActionListener {
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            viewRecordingKambing.setVisible(true);
-            viewKalkulator.setVisible(false);
-            viewBantuan.setVisible(false);
-            viewTambah.setVisible(false);
-        }
-    }
-
-    private class kalkulatorListener implements ActionListener {
-
-        public kalkulatorListener() {
+        public accountListener() {
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            viewRecordingKambing.setVisible(false);
-            viewKalkulator.setVisible(true);
-            viewBantuan.setVisible(false);
-            viewTambah.setVisible(false);
+            viewRecordingAnimal.setVisible(false);
+            viewCalculator.setVisible(false);
+            viewAccount.setVisible(true);
         }
     }
 
-    private class bantuanListener implements ActionListener {
+    private class rAnimalListener implements ActionListener {
 
-        public bantuanListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            viewRecordingAnimal.setVisible(true);
+            viewCalculator.setVisible(false);
+            viewAccount.setVisible(false);
+        }
+    }
+
+    private class tAnimalListener implements ActionListener {
+
+        public tAnimalListener() {
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            viewRecordingKambing.setVisible(false);
-            viewKalkulator.setVisible(false);
-            viewBantuan.setVisible(true);
-            viewTambah.setVisible(false);
+            
         }
     }
 
-    private class tambahListener implements ActionListener {
+    private class calculatorListener implements ActionListener {
+
+        public calculatorListener() {
+        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            viewRecordingKambing.setVisible(false);
-            viewKalkulator.setVisible(false);
-            viewBantuan.setVisible(false);
-            viewTambah.setVisible(true);
+            viewRecordingAnimal.setVisible(false);
+            viewCalculator.setVisible(true);
+            viewAccount.setVisible(false);
         }
     }
 
-    private class keluarListener implements ActionListener {
+    private class logoutListener implements ActionListener {
 
-        public keluarListener() {
+        public logoutListener() {
         }
 
         @Override
