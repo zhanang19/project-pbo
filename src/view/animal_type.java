@@ -245,25 +245,25 @@ public class animal_type extends javax.swing.JFrame {
         btnAdd_animalType.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/tambah.png"))); // NOI18N
         btnAdd_animalType.setContentAreaFilled(false);
-        jPanel1.add(btnAdd_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 100, 50, -1));
+        jPanel1.add(btnAdd_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, 50, -1));
 
         btnDelete_animalType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnDelete_animalType.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/hapus.png"))); // NOI18N
         btnDelete_animalType.setContentAreaFilled(false);
-        jPanel1.add(btnDelete_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 50, -1));
+        jPanel1.add(btnDelete_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 100, 50, -1));
 
         btnUpdate_animalType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnUpdate_animalType.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/edit.png"))); // NOI18N
         btnUpdate_animalType.setContentAreaFilled(false);
-        jPanel1.add(btnUpdate_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 100, 50, -1));
+        jPanel1.add(btnUpdate_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 100, 50, -1));
 
         btnRefresh_animalType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRefresh_animalType.setForeground(new java.awt.Color(255, 255, 255));
         btnRefresh_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/refresh.png"))); // NOI18N
         btnRefresh_animalType.setContentAreaFilled(false);
-        jPanel1.add(btnRefresh_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 100, 50, -1));
+        jPanel1.add(btnRefresh_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 100, 50, -1));
 
         button_animalType.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -278,7 +278,7 @@ public class animal_type extends javax.swing.JFrame {
             .addGap(0, 38, Short.MAX_VALUE)
         );
 
-        jPanel1.add(button_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 100, 200, 38));
+        jPanel1.add(button_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 100, 200, 38));
 
         scrollAnimalType.setAutoscrolls(true);
 
