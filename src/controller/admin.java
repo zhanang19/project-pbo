@@ -14,8 +14,10 @@ import view.account_admin;
 import view.recordingAnimal_admin;
 import view.animal_type;
 import view.calculator;
-import model.m_recordingAnimal;
+import model.M_recording_animal;
 import model.M_user;
+import model.M_animal_type;
+import model.M_type_pet;
 import view.daftar;
 import view.lupa_password;
 
@@ -28,10 +30,12 @@ public class admin {
     private login viewLogin;
     private recordingAnimal_admin viewRecordingAnimal;
     private calculator viewCalculator;
-    private m_recordingAnimal modelAnimal;
+    private M_recording_animal modelAnimal;
     private M_user modelUsers;
     private account_admin viewAccount;
     private animal_type viewAnimalType;
+    private M_animal_type modelAnimalType;
+    private M_type_pet modelTypePet;
 
     public admin() {
         viewRecordingAnimal = new recordingAnimal_admin();
@@ -80,11 +84,18 @@ public class admin {
         viewAnimalType.updateAnimalTypeListener(new updateAnimalTypeListener());
         viewAnimalType.refreshAnimalTypeListener(new refreshAnimalTypeListener());
 
-        modelAnimal = new m_recordingAnimal();
-        bacaTabelRecord();
+        modelAnimal = new M_recording_animal();
+        readTableRecordingAnimal();
 
         modelUsers = new M_user();
         readTableUsers();
+        
+        modelAnimalType = new M_animal_type();
+        readTableAnimalType();
+        
+        modelTypePet = new M_type_pet();
+        readTableTypePet();
+        
     }
 
     //<editor-fold defaultstate="collapse" desc="Account">
@@ -163,8 +174,8 @@ public class admin {
         }
     }
 
-    private void bacaTabelRecord() {
-        viewRecordingAnimal.setTabel(modelAnimal.bacaTabel());
+    private void readTableRecordingAnimal() {
+        viewRecordingAnimal.setTabel(modelAnimal.readTable_RecordingAnimal());
     }
 
     private class addRecordListener implements ActionListener {
@@ -225,6 +236,14 @@ public class admin {
             viewAccount.setVisible(false);
             viewAnimalType.setVisible(true);
         }
+    }
+    
+    private void readTableAnimalType() {
+        viewAnimalType.setTabelAnimalType(modelAnimalType.readTable_animalType());
+    }
+    
+    private void readTableTypePet() {
+        viewAnimalType.setTabelTypePet(modelTypePet.readTable_typePet());
     }
 
     private class addTypePetListener implements ActionListener {

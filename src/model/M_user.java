@@ -19,7 +19,6 @@ import main.Config;
 public class M_user {
 
     private Connection DBConnection;
-    private String tableName = "users";
     
     public M_user() {
         // get and set connection to local variable
@@ -56,8 +55,7 @@ public class M_user {
     
     public boolean createUser(String name, String email, String password, int level, int status) {
         
-        String query = "INSERT into `" + this.getTableName() + "` "
-                     + "SET `name`, `email`, `password`, `level`, `status` "
+        String query = "INSERT into public.users SET `name`, `email`, `password`, `level`, `status` "
                      + "VALUES(?,?,?,?,?);";
         try {
             PreparedStatement st = DBConnection.prepareStatement(query);
@@ -93,15 +91,6 @@ public class M_user {
             e.getMessage();
         }
         return tingkatan;
-    }
-
-    public String getTableName() {
-        return tableName;
-    }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
-    }
-    
+    }   
     
 }

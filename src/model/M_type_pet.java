@@ -6,7 +6,6 @@
 package model;
 
 import java.sql.Connection;
-import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,30 +14,30 @@ import main.Config;
 
 /**
  *
- * @author zha
+ * @author ASUS
  */
-public class M_animal_type {
+public class M_type_pet {
 
     private Connection DBConnection;
 
-    public M_animal_type() {
+    public M_type_pet() {
         // get and set connection to local variable
         DBConnection = new Config().createDBConnection();
     }
-    
-    public DefaultTableModel readTable_animalType() {
-        String query = "SELECT id, animal_type FROM public.animal_type;";
-        String namaKolom[] = {"Id", "Tipe Hewan"};
+
+    public DefaultTableModel readTable_typePet() {
+        String query = "SELECT id, type_pet FROM public.type_pet;";
+        String namaKolom[] = {"Id", "Tipe Gen"};
         DefaultTableModel tabel = new DefaultTableModel(null, namaKolom);
         try {
             PreparedStatement st = DBConnection.prepareStatement(query);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 Object data[] = new Object[2];
-                
+
                 data[0] = rs.getInt(1);
                 data[1] = rs.getString(2);
-                
+
                 tabel.addRow(data);
             }
         } catch (SQLException e) {
@@ -48,12 +47,12 @@ public class M_animal_type {
         return tabel;
     }
     
-    public boolean createAnimalType(String animal_type) {
+    public boolean createAnimalType(String type_pet) {
 
         String query = "INSERT INTO public.animal_type (id, animal_type) VALUES (?, ?);";
         try {
             PreparedStatement st = DBConnection.prepareStatement(query);
-            st.setString(1, animal_type);
+            st.setString(1, type_pet);
 
             if (st.executeUpdate() > 0) {
                 return true;
