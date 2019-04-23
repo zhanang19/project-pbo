@@ -41,10 +41,6 @@ public class animal_type extends javax.swing.JFrame {
         btnTAnimal.addActionListener(a);
     }
 
-    public void calculatorListener(ActionListener a) {
-        btnCalculator.addActionListener(a);
-    }
-
     public void logoutListener(ActionListener a) {
         btnLogout.addActionListener(a);
     }
@@ -121,7 +117,6 @@ public class animal_type extends javax.swing.JFrame {
         btnAccount = new javax.swing.JButton();
         btnRAnimal = new javax.swing.JButton();
         btnTAnimal = new javax.swing.JButton();
-        btnCalculator = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnAdd_typePet = new javax.swing.JButton();
         btnDelete_typePet = new javax.swing.JButton();
@@ -140,10 +135,10 @@ public class animal_type extends javax.swing.JFrame {
         menu = new javax.swing.JPanel();
         tipePet = new javax.swing.JLabel();
         txtTypePet = new javax.swing.JTextField();
+        animalType = new javax.swing.JLabel();
         txtAnimalType = new javax.swing.JTextField();
         form_typePet = new javax.swing.JPanel();
         form_animalType = new javax.swing.JPanel();
-        animalType = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -160,7 +155,7 @@ public class animal_type extends javax.swing.JFrame {
         btnAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_crowd_50px.png"))); // NOI18N
-        btnAccount.setText("Akun");
+        btnAccount.setText("Account");
         btnAccount.setContentAreaFilled(false);
         btnAccount.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAccount.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -169,7 +164,7 @@ public class animal_type extends javax.swing.JFrame {
         btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
-        btnRAnimal.setText("Rekam Hewan");
+        btnRAnimal.setText("Recording Animal");
         btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -178,24 +173,15 @@ public class animal_type extends javax.swing.JFrame {
         btnTAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnTAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
-        btnTAnimal.setText("Tipe Hewan");
+        btnTAnimal.setText("Animal Type");
         btnTAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnTAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnTAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
 
-        btnCalculator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
-        btnCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_calculator_48px_1.png"))); // NOI18N
-        btnCalculator.setText("Kalkulator");
-        btnCalculator.setContentAreaFilled(false);
-        btnCalculator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCalculator.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 155, 80));
-
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_exit_32px_1.png"))); // NOI18N
-        btnLogout.setText("Keluar");
+        btnLogout.setText("Logout");
         btnLogout.setContentAreaFilled(false);
         btnLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -288,7 +274,7 @@ public class animal_type extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Id", "Tipe Hewan"
+                "Id", "Animal Type"
             }
         ) {
             Class[] types = new Class [] {
@@ -312,7 +298,7 @@ public class animal_type extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Id", "Tipe Gen"
+                "Id", "Type Pet"
             }
         ) {
             Class[] types = new Class [] {
@@ -344,13 +330,18 @@ public class animal_type extends javax.swing.JFrame {
         jPanel1.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 380));
 
         tipePet.setForeground(new java.awt.Color(255, 255, 255));
-        tipePet.setText("Tipe Gen");
+        tipePet.setText("Type Pet");
         tipePet.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(tipePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 70, -1, -1));
 
         txtTypePet.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtTypePet.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtTypePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 160, -1));
+        jPanel1.add(txtTypePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 160, -1));
+
+        animalType.setForeground(new java.awt.Color(255, 255, 255));
+        animalType.setText("AnimalType");
+        animalType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, -1, -1));
 
         txtAnimalType.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtAnimalType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -373,25 +364,15 @@ public class animal_type extends javax.swing.JFrame {
 
         form_animalType.setBackground(new java.awt.Color(153, 153, 153));
 
-        animalType.setForeground(new java.awt.Color(255, 255, 255));
-        animalType.setText("Tipe Hewan");
-        animalType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
         javax.swing.GroupLayout form_animalTypeLayout = new javax.swing.GroupLayout(form_animalType);
         form_animalType.setLayout(form_animalTypeLayout);
         form_animalTypeLayout.setHorizontalGroup(
             form_animalTypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(form_animalTypeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(animalType, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(188, Short.MAX_VALUE))
+            .addGap(0, 270, Short.MAX_VALUE)
         );
         form_animalTypeLayout.setVerticalGroup(
             form_animalTypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(form_animalTypeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(animalType)
-                .addContainerGap(15, Short.MAX_VALUE))
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
         jPanel1.add(form_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, 270, 40));
@@ -456,7 +437,6 @@ public class animal_type extends javax.swing.JFrame {
     private javax.swing.JButton btnAccount;
     private javax.swing.JButton btnAdd_animalType;
     private javax.swing.JButton btnAdd_typePet;
-    private javax.swing.JButton btnCalculator;
     private javax.swing.JButton btnDelete_animalType;
     private javax.swing.JButton btnDelete_typePet;
     private javax.swing.JButton btnLogout;

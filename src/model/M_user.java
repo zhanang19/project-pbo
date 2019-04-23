@@ -5,7 +5,6 @@
  */
 package model;
 import java.sql.Connection;
-import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +17,7 @@ import main.Config;
  */
 public class M_user {
 
-    private Connection DBConnection;
+    private final Connection DBConnection;
     
     public M_user() {
         // get and set connection to local variable
@@ -47,8 +46,7 @@ public class M_user {
                 tabel.addRow(data);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            e.getMessage();
+            System.out.println("Something was wrong. Error: " + e);
         }
         return tabel;
     }
@@ -87,8 +85,7 @@ public class M_user {
             }
             
         } catch (SQLException e) {
-            e.printStackTrace();
-            e.getMessage();
+            System.out.println("Something was wrong. Error: " + e);
         }
         return tingkatan;
     }   

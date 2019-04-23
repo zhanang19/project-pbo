@@ -23,21 +23,21 @@ public class calculator extends javax.swing.JFrame {
         initComponents();
                         
         menu.setBackground(new Color(0, 0, 0, 40));
-        kalkulator.setBackground(new Color(0, 0, 0, 40));
+        calculator.setBackground(new Color(0, 0, 0, 40));
         result.setBackground(new Color(0, 0, 0, 40));
     }
 
     //<editor-fold defaultstate="collapse" desc="ACTION LISTENER">
-    public void accountListener(ActionListener a) {
-        btnAccount.addActionListener(a);
+    public void profilListener(ActionListener a) {
+        btnProfil.addActionListener(a);
     }
 
     public void rAnimalListener(ActionListener a) {
         btnRAnimal.addActionListener(a);
     }
 
-    public void tAnimalListener(ActionListener a) {
-        btnTAnimal.addActionListener(a);
+    public void animalCareListener(ActionListener a) {
+        btnAnimalCare.addActionListener(a);
     }
 
     public void calculatorListener(ActionListener a) {
@@ -51,8 +51,7 @@ public class calculator extends javax.swing.JFrame {
         btnCount.addActionListener(a);
     }
     //</editor-fold>
-    
-    
+        
     //<editor-fold defaultstate="collapse" desc="GET">
     public String getGender(){
         return cmbGender.getSelectedItem().toString();
@@ -72,20 +71,20 @@ public class calculator extends javax.swing.JFrame {
     //</editor-fold>
     
     //<editor-fold defaultstate="collapse" desc="SET">    
-    public void setMessage(String pesan) {
-        this.message.setText(pesan);
+    public void setMessage(String message) {
+        this.message.setText(message);
     }
 
-    public void setTxtPrice(String txtHarga) {
-        this.txtPrice.setText(txtHarga);
+    public void setTxtPrice(String txtPrice) {
+        this.txtPrice.setText(txtPrice);
     }
 
-    public void setTxtTitleResult(String txtJudulHasil) {
-        this.txtTitleResult.setText(txtJudulHasil);
+    public void setTxtTitleResult(String txtResultTitle) {
+        this.txtTitleResult.setText(txtResultTitle);
     }
 
-    public void setTxtWeight(String txtLD) {
-        this.txtWeight.setText(txtLD);
+    public void setTxtWeight(String txtWeight) {
+        this.txtWeight.setText(txtWeight);
     }
     
     public void setBgTitleResult(Color a){        
@@ -112,7 +111,7 @@ public class calculator extends javax.swing.JFrame {
 
         jPanel = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
-        kalkulator = new javax.swing.JPanel();
+        calculator = new javax.swing.JPanel();
         gender = new javax.swing.JLabel();
         cmbGender = new javax.swing.JComboBox<>();
         age = new javax.swing.JLabel();
@@ -130,9 +129,9 @@ public class calculator extends javax.swing.JFrame {
         txtTitleResult = new javax.swing.JLabel();
         txtWeight = new javax.swing.JLabel();
         txtPrice = new javax.swing.JLabel();
-        btnAccount = new javax.swing.JButton();
+        btnProfil = new javax.swing.JButton();
         btnRAnimal = new javax.swing.JButton();
-        btnTAnimal = new javax.swing.JButton();
+        btnAnimalCare = new javax.swing.JButton();
         btnCalculator = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         menu = new javax.swing.JPanel();
@@ -150,47 +149,49 @@ public class calculator extends javax.swing.JFrame {
         title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
 
-        kalkulator.setBackground(new java.awt.Color(153, 153, 153));
-        kalkulator.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        calculator.setBackground(new java.awt.Color(153, 153, 153));
+        calculator.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         gender.setForeground(new java.awt.Color(255, 255, 255));
         gender.setText("gender");
-        kalkulator.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        calculator.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Jantan", "Betina" }));
-        kalkulator.add(cmbGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
+        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Male", "Female" }));
+        cmbGender.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        calculator.add(cmbGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
 
         age.setForeground(new java.awt.Color(255, 255, 255));
         age.setText("Age");
-        kalkulator.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
-        kalkulator.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 38, -1));
+        calculator.add(age, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        calculator.add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 38, -1));
 
         years.setForeground(new java.awt.Color(255, 255, 255));
         years.setText("Years");
-        kalkulator.add(years, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, 10));
+        calculator.add(years, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, 10));
 
         bodyLength.setForeground(new java.awt.Color(255, 255, 255));
         bodyLength.setText("Body Length");
-        kalkulator.add(bodyLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-        kalkulator.add(txtBodyLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 37, -1));
+        calculator.add(bodyLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        calculator.add(txtBodyLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 37, -1));
 
         cm1.setForeground(new java.awt.Color(255, 255, 255));
         cm1.setText("cm");
-        kalkulator.add(cm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, 10));
+        calculator.add(cm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, 10));
 
         chestSize.setForeground(new java.awt.Color(255, 255, 255));
         chestSize.setText("Chest Size");
-        kalkulator.add(chestSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-        kalkulator.add(txtChestSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 39, -1));
+        calculator.add(chestSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        calculator.add(txtChestSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 39, -1));
 
         cm2.setForeground(new java.awt.Color(255, 255, 255));
         cm2.setText("cm");
-        kalkulator.add(cm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, 10));
+        calculator.add(cm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, 10));
 
         btnCount.setText("Count");
-        kalkulator.add(btnCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 190, 200, -1));
+        btnCount.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        calculator.add(btnCount, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 190, 200, -1));
 
-        jPanel.add(kalkulator, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 260, 250));
+        jPanel.add(calculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 260, 250));
 
         message.setForeground(new java.awt.Color(204, 0, 0));
         jPanel.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, 230, 20));
@@ -238,37 +239,37 @@ public class calculator extends javax.swing.JFrame {
 
         jPanel.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 460, 150));
 
-        btnAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnAccount.setForeground(new java.awt.Color(255, 255, 255));
-        btnAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_crowd_50px.png"))); // NOI18N
-        btnAccount.setText("Akun");
-        btnAccount.setContentAreaFilled(false);
-        btnAccount.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAccount.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel.add(btnAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 80));
+        btnProfil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnProfil.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_nurse_male_30px.png"))); // NOI18N
+        btnProfil.setText("Profil");
+        btnProfil.setContentAreaFilled(false);
+        btnProfil.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnProfil.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel.add(btnProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 80));
 
         btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
-        btnRAnimal.setText("Rekam Hewan");
+        btnRAnimal.setText("Recording Animal");
         btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel.add(btnRAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 155, 80));
 
-        btnTAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnTAnimal.setForeground(new java.awt.Color(255, 255, 255));
-        btnTAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
-        btnTAnimal.setText("Tipe Hewan");
-        btnTAnimal.setContentAreaFilled(false);
-        btnTAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnTAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel.add(btnTAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
+        btnAnimalCare.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAnimalCare.setForeground(new java.awt.Color(255, 255, 255));
+        btnAnimalCare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
+        btnAnimalCare.setText("Animal Care");
+        btnAnimalCare.setContentAreaFilled(false);
+        btnAnimalCare.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAnimalCare.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel.add(btnAnimalCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
 
         btnCalculator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
         btnCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_calculator_48px_1.png"))); // NOI18N
-        btnCalculator.setText("Kalkulator");
+        btnCalculator.setText("Calculator");
         btnCalculator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCalculator.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel.add(btnCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 155, 80));
@@ -276,7 +277,7 @@ public class calculator extends javax.swing.JFrame {
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_exit_32px_1.png"))); // NOI18N
-        btnLogout.setText("Keluar");
+        btnLogout.setText("Logout");
         btnLogout.setContentAreaFilled(false);
         btnLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -358,19 +359,19 @@ public class calculator extends javax.swing.JFrame {
     private javax.swing.JLabel age;
     private javax.swing.JLabel background;
     private javax.swing.JLabel bodyLength;
-    private javax.swing.JButton btnAccount;
+    private javax.swing.JButton btnAnimalCare;
     private javax.swing.JButton btnCalculator;
     private javax.swing.JButton btnCount;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnProfil;
     private javax.swing.JButton btnRAnimal;
-    private javax.swing.JButton btnTAnimal;
+    private javax.swing.JPanel calculator;
     private javax.swing.JLabel chestSize;
     private javax.swing.JLabel cm1;
     private javax.swing.JLabel cm2;
     private javax.swing.JComboBox<String> cmbGender;
     private javax.swing.JLabel gender;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JPanel kalkulator;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel message;
     private javax.swing.JPanel result;

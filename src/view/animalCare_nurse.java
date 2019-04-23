@@ -6,44 +6,44 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
 
 /**
  *
- * @author User
+ * @author MaulanaKevinPradana
  */
-public class recordingAnimal_admin extends javax.swing.JFrame {
+public class animalCare_nurse extends javax.swing.JFrame {
 
     /**
-     * Creates new form recordingAnimal_admin
+     * Creates new form animalCare_nurse
      */
-    public recordingAnimal_admin() {
+    public animalCare_nurse() {
         initComponents();
-
         menu.setBackground(new Color(0, 0, 0, 40));
         button.setBackground(new Color(0, 0, 0, 40));
         form.setBackground(new Color(0, 0, 0, 40));
     }
 
-    //<editor-fold defaultstate="collapse" desc="ACTION LISTENER">
-    public void accountListener(ActionListener a) {
-        btnAccount.addActionListener(a);
+    // <editor-fold defaultstate="collapsed" desc="Action Listener">
+    public void profilListener(ActionListener a) {
+        btnProfil.addActionListener(a);
     }
 
     public void rAnimalListener(ActionListener a) {
         btnRAnimal.addActionListener(a);
     }
 
-    public void tAnimalListener(ActionListener a) {
-        btnTAnimal.addActionListener(a);
+    public void animalCareListener(ActionListener a) {
+        btnAnimalCare.addActionListener(a);
+    }
+
+    public void calculatorListener(ActionListener a) {
+        btnCalculator.addActionListener(a);
     }
 
     public void logoutListener(ActionListener a) {
@@ -66,72 +66,57 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         btnRefresh.addActionListener(a);
     }
     //</editor-fold>
-    
+
     // <editor-fold defaultstate="collapsed" desc="GET">
-    public String getCmbAnimalType() {
-        return cmbAnimalType.getSelectedItem().toString();
+    public String getCmbAnimalName() {
+        return cmbAnimalName.getSelectedItem().toString();
     }
 
-    public String getCmbEarType() {
-        return cmbEarType.getSelectedItem().toString();
+    public String getCmbUsername() {
+        return cmbUsername.getSelectedItem().toString();
     }
 
-    public String getCmbGender() {
-        return cmbGender.getSelectedItem().toString();
+    public String getTxtBodyLength() {
+        return txtBodyLength.getText();
     }
 
-    public String getCmbTypePet() {
-        return cmbTypePet.getSelectedItem().toString();
+    public String getTxtComment() {
+        return txtComment.getText();
     }
 
-    public String getTxtBirthdate() {
-        return txtBirthdate.getText();
+    public String getTxtHeight() {
+        return txtHeight.getText();
     }
 
-    public String getTxtName() {
-        return txtName.getText();
-    }
-
-    public String getTxtSkinColor() {
-        return txtSkinColor.getText();
-    }
-
-    public String getTxtUser() {
-        return txtUser.getText();
+    public String getTxtWeight() {
+        return txtWeight.getText();
     }
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="SET">
-    public void setCmbAnimalType(JComboBox<String> cmbAnimalType) {
-        this.cmbAnimalType = cmbAnimalType;
+
+    public void setCmbAnimalName(JComboBox<String> cmbAnimalName) {
+        this.cmbAnimalName = cmbAnimalName;
     }
 
-    public void setCmbEarType(JComboBox<String> cmbEarType) {
-        this.cmbEarType = cmbEarType;
+    public void setCmbUsername(JComboBox<String> cmbUsername) {
+        this.cmbUsername = cmbUsername;
     }
 
-    public void setCmbGender(JComboBox<String> cmbGender) {
-        this.cmbGender = cmbGender;
+    public void setTxtBodyLength(String txtBodyLength) {
+        this.txtBodyLength.setText(txtBodyLength);
     }
 
-    public void setCmbTypePet(JComboBox<String> cmbTypePet) {
-        this.cmbTypePet = cmbTypePet;
+    public void setTxtComment(String txtComment) {
+        this.txtComment.setText(txtComment);
     }
 
-    public void setTxtBirthdate(String txtBirthdate) {
-        this.txtBirthdate.setText(txtBirthdate);
+    public void setTxtHeight(String txtHeight) {
+        this.txtHeight.setText(txtHeight);
     }
 
-    public void setTxtName(String txtName) {
-        this.txtName.setText(txtName);
-    }
-
-    public void setTxtSkinColor(String txtSkinColor) {
-        this.txtSkinColor.setText(txtSkinColor);
-    }
-
-    public void setTxtUser(String txtUser) {
-        this.txtUser.setText(txtUser);
+    public void setTxtWeight(String txtWeight) {
+        this.txtWeight.setText(txtWeight);
     }
     //</editor-fold>
     
@@ -143,12 +128,13 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
     public void tabelListener(MouseListener m) {
         tabelRecord.addMouseListener(m);
     }
-    
+
     public int getBarisTerpilih() {
         return tabelRecord.getSelectedRow();
     }
-    //</editor-fold>
 
+    //</editor-fold>
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,9 +146,10 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
-        btnAccount = new javax.swing.JButton();
+        btnProfil = new javax.swing.JButton();
         btnRAnimal = new javax.swing.JButton();
-        btnTAnimal = new javax.swing.JButton();
+        btnAnimalCare = new javax.swing.JButton();
+        btnCalculator = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
@@ -172,28 +159,23 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         tabelRecord = new javax.swing.JTable();
         button = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
-        name = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        animalType = new javax.swing.JLabel();
-        cmbAnimalType = new javax.swing.JComboBox<>();
-        gender = new javax.swing.JLabel();
-        cmbGender = new javax.swing.JComboBox<>();
-        birthdate = new javax.swing.JLabel();
-        txtBirthdate = new javax.swing.JTextField();
-        user = new javax.swing.JLabel();
-        txtUser = new javax.swing.JTextField();
-        skinColor = new javax.swing.JLabel();
-        txtSkinColor = new javax.swing.JTextField();
-        earType = new javax.swing.JLabel();
-        cmbEarType = new javax.swing.JComboBox<>();
-        typePet = new javax.swing.JLabel();
-        cmbTypePet = new javax.swing.JComboBox<>();
+        animalName = new javax.swing.JLabel();
+        cmbAnimalName = new javax.swing.JComboBox<>();
+        Username = new javax.swing.JLabel();
+        cmbUsername = new javax.swing.JComboBox<>();
+        weight = new javax.swing.JLabel();
+        txtWeight = new javax.swing.JTextField();
+        bodyLength = new javax.swing.JLabel();
+        txtBodyLength = new javax.swing.JTextField();
+        height = new javax.swing.JLabel();
+        txtHeight = new javax.swing.JTextField();
+        comment = new javax.swing.JLabel();
+        txtComment = new javax.swing.JTextField();
         form = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -203,31 +185,40 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
 
-        btnAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnAccount.setForeground(new java.awt.Color(255, 255, 255));
-        btnAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_crowd_50px.png"))); // NOI18N
-        btnAccount.setText("Account");
-        btnAccount.setContentAreaFilled(false);
-        btnAccount.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnAccount.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 80));
+        btnProfil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnProfil.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_nurse_male_30px.png"))); // NOI18N
+        btnProfil.setText("Profil");
+        btnProfil.setContentAreaFilled(false);
+        btnProfil.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnProfil.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(btnProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 80));
 
         btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
         btnRAnimal.setText("Recording Animal");
+        btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnRAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 155, 80));
 
-        btnTAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnTAnimal.setForeground(new java.awt.Color(255, 255, 255));
-        btnTAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
-        btnTAnimal.setText("Animal Type");
-        btnTAnimal.setContentAreaFilled(false);
-        btnTAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnTAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnTAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
+        btnAnimalCare.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAnimalCare.setForeground(new java.awt.Color(255, 255, 255));
+        btnAnimalCare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
+        btnAnimalCare.setText("Animal Care");
+        btnAnimalCare.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAnimalCare.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(btnAnimalCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
+
+        btnCalculator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_calculator_48px_1.png"))); // NOI18N
+        btnCalculator.setText("Calculator");
+        btnCalculator.setContentAreaFilled(false);
+        btnCalculator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCalculator.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(btnCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 155, 80));
 
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,15 +262,15 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
 
         tabelRecord.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Animal Name", "Animal Type", "Gender", "Birthdate", "User", "Skin Color", "Ear Type", "Type Pet", "Updated at", "Created at"
+                "Id", "Animal Name", "User", "Weight", "Body Length", "height", "Comment", "Timestap"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -321,77 +312,59 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
 
         jPanel1.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 380));
 
-        name.setForeground(new java.awt.Color(255, 255, 255));
-        name.setText("Animal Name");
-        name.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, -1, -1));
+        animalName.setForeground(new java.awt.Color(255, 255, 255));
+        animalName.setText("Animal Name");
+        animalName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(animalName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, -1, -1));
 
-        txtName.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 210, -1));
+        cmbAnimalName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Goat", "Cow" }));
+        cmbAnimalName.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(cmbAnimalName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 210, -1));
 
-        animalType.setForeground(new java.awt.Color(255, 255, 255));
-        animalType.setText("Animal Type");
-        animalType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, -1));
+        Username.setForeground(new java.awt.Color(255, 255, 255));
+        Username.setText("User");
+        Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, -1));
 
-        cmbAnimalType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Goat", "Cow" }));
-        cmbAnimalType.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbAnimalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 210, -1));
+        cmbUsername.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Goat", "Cow" }));
+        cmbUsername.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(cmbUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, 210, -1));
 
-        gender.setForeground(new java.awt.Color(255, 255, 255));
-        gender.setText("Gender");
-        gender.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(gender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, -1));
+        weight.setForeground(new java.awt.Color(255, 255, 255));
+        weight.setText("Weight");
+        weight.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, -1));
 
-        cmbGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Male", "Female" }));
-        cmbGender.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 210, -1));
+        txtWeight.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtWeight.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtWeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 210, -1));
 
-        birthdate.setForeground(new java.awt.Color(255, 255, 255));
-        birthdate.setText("Birthdate");
-        birthdate.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(birthdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 570, -1, -1));
+        bodyLength.setForeground(new java.awt.Color(255, 255, 255));
+        bodyLength.setText("Body Length");
+        bodyLength.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(bodyLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
 
-        txtBirthdate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtBirthdate.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtBirthdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, 210, -1));
+        txtBodyLength.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtBodyLength.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtBodyLength, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 210, -1));
 
-        user.setForeground(new java.awt.Color(255, 255, 255));
-        user.setText("User");
-        user.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
+        height.setForeground(new java.awt.Color(255, 255, 255));
+        height.setText("Height");
+        height.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(height, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, -1, -1));
 
-        txtUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 210, -1));
+        txtHeight.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtHeight.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtHeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, 210, -1));
 
-        skinColor.setForeground(new java.awt.Color(255, 255, 255));
-        skinColor.setText("Skin Color");
-        skinColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(skinColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, -1, -1));
+        comment.setForeground(new java.awt.Color(255, 255, 255));
+        comment.setText("Comment");
+        comment.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(comment, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, -1, -1));
 
-        txtSkinColor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtSkinColor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtSkinColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 490, 210, -1));
-
-        earType.setForeground(new java.awt.Color(255, 255, 255));
-        earType.setText("Ear Type");
-        earType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(earType, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, -1, -1));
-
-        cmbEarType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Big", "Small" }));
-        cmbEarType.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbEarType, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, 210, -1));
-
-        typePet.setForeground(new java.awt.Color(255, 255, 255));
-        typePet.setText("Type Pet");
-        typePet.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 570, -1, -1));
-
-        cmbTypePet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "Boer", "Etawa" }));
-        cmbTypePet.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(cmbTypePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 570, 210, -1));
+        txtComment.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtComment.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, 210, -1));
 
         form.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -403,10 +376,10 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
         );
         formLayout.setVerticalGroup(
             formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 120, Short.MAX_VALUE)
         );
 
-        jPanel1.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 770, 160));
+        jPanel1.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 770, 120));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/assets/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 660));
@@ -443,56 +416,54 @@ public class recordingAnimal_admin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new recordingAnimal_admin().setVisible(true);
+                new animalCare_nurse().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel animalType;
+    private javax.swing.JLabel Username;
+    private javax.swing.JLabel animalName;
     private javax.swing.JLabel background;
-    private javax.swing.JLabel birthdate;
-    private javax.swing.JButton btnAccount;
+    private javax.swing.JLabel bodyLength;
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnAnimalCare;
+    private javax.swing.JButton btnCalculator;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnProfil;
     private javax.swing.JButton btnRAnimal;
     private javax.swing.JButton btnRefresh;
-    private javax.swing.JButton btnTAnimal;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel button;
-    private javax.swing.JComboBox<String> cmbAnimalType;
-    private javax.swing.JComboBox<String> cmbEarType;
-    private javax.swing.JComboBox<String> cmbGender;
-    private javax.swing.JComboBox<String> cmbTypePet;
-    private javax.swing.JLabel earType;
+    private javax.swing.JComboBox<String> cmbAnimalName;
+    private javax.swing.JComboBox<String> cmbUsername;
+    private javax.swing.JLabel comment;
     private javax.swing.JPanel form;
-    private javax.swing.JLabel gender;
+    private javax.swing.JLabel height;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menu;
-    private javax.swing.JLabel name;
     private javax.swing.JScrollPane scroll;
-    private javax.swing.JLabel skinColor;
     private javax.swing.JTable tabelRecord;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtBirthdate;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtSkinColor;
-    private javax.swing.JTextField txtUser;
-    private javax.swing.JLabel typePet;
-    private javax.swing.JLabel user;
+    private javax.swing.JTextField txtBodyLength;
+    private javax.swing.JTextField txtComment;
+    private javax.swing.JTextField txtHeight;
+    private javax.swing.JTextField txtWeight;
+    private javax.swing.JLabel weight;
     // End of variables declaration//GEN-END:variables
 }

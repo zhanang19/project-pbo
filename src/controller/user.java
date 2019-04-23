@@ -7,187 +7,67 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import model.M_user;
-import view.login;
-import view.daftar;
-import view.lupa_password;
+import view.profil_user;
+import view.animalCare_user;
 
 /**
  *
- * @author ASUS
+ * @author MaulanaKevinPradana
  */
 public class user {
 
-    private M_user model;
-    private login viewLogin;
-    private daftar viewDaftar;
-    private lupa_password viewLupaPassword;
+    private final profil_user viewProfil;
+    private final animalCare_user viewAnimalCare;
 
     public user() {
-        //konstruktor kosong
+        viewProfil = new profil_user();
+        viewProfil.profilListener(new profilListener());
+        viewProfil.animalCareListener(new animalCareLisener());
+        viewProfil.updateListener(new updateListener());
+        viewProfil.logoutListener(new logout(viewProfil));
+
+        viewAnimalCare = new animalCare_user();
+        viewAnimalCare.setVisible(true);
+        viewAnimalCare.profilListener(new profilListener());
+        viewAnimalCare.animalCareListener(new animalCareLisener());
+        viewAnimalCare.logoutListener(new logout(viewAnimalCare));
     }
 
-    public user(login viewLogin, daftar viewDaftar, lupa_password viewLupaPassword, M_user model) {
-        this.model = model;
+    //<editor-fold defaultstate="collapse" desc="Profil">
+    private class profilListener implements ActionListener {
 
-        this.viewLogin = viewLogin;
-        this.viewLogin.setVisible(true);
-        this.viewLogin.loginListener(new loginListener());
-        this.viewLogin.daftarListener(new daftarViewListener());
-        this.viewLogin.lupaPasswordListener(new lupaPasswordViewLister());
-        this.viewLogin.exitListener(new exitListener());
-
-        this.viewDaftar = viewDaftar;
-        this.viewDaftar.daftarListener(new daftarListener());
-        this.viewDaftar.backListener(new backListener());
-        this.viewDaftar.exitListener(new exitListener());
-
-        this.viewLupaPassword = viewLupaPassword;
-        this.viewLupaPassword.sendListener(new sendListener());
-        this.viewLupaPassword.backListener(new backListener());
-        this.viewLupaPassword.exitListener(new exitListener());
-
-    }
-
-    //<editor-fold defaultstate="collapse" desc="Login">
-    private class loginListener implements ActionListener {
+        public profilListener() {
+        }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String username = viewLogin.getTxtUsername();
-            String password = viewLogin.getTxtPassword();
+            viewProfil.setVisible(true);
+            viewAnimalCare.setVisible(false);
+        }
+    }
 
-            int tingkatan = model.login(username, password);
-            if (tingkatan == 1) {
-                admin admin = new controller.admin();
-                viewLogin.dispose();
-            } else {
-                JOptionPane.showMessageDialog(viewLogin, "Username atau Password Salah");
-            }
+    private static class updateListener implements ActionListener {
+
+        public updateListener() {
         }
 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
     }
+
     //</editor-fold>
+    
+    private class animalCareLisener implements ActionListener {
 
-    //<editor-fold defaultstate="collapse" desc="Daftar">
-    private class daftarViewListener implements MouseListener {
-
-        public daftarViewListener() {
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            viewLogin.setVisible(false);
-            viewDaftar.setVisible(true);
-            viewLupaPassword.setVisible(false);
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
-        }
-    }
-
-    private class daftarListener implements ActionListener {
-
-        public daftarListener() {
+        public animalCareLisener() {
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            viewAnimalCare.setVisible(true);
+            viewProfil.setVisible(false);
         }
     }
-    //</editor-fold>
-
-    //<editor-fold defaultstate="collapse" desc="Lupa Password">
-    private class lupaPasswordViewLister implements MouseListener {
-
-        public lupaPasswordViewLister() {
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            viewLogin.setVisible(false);
-            viewDaftar.setVisible(false);
-            viewLupaPassword.setVisible(true);
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
-        }
-    }
-
-    private static class sendListener implements ActionListener {
-
-        public sendListener() {
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
-    //</editor-fold>
-
-    private class backListener implements ActionListener {
-
-        public backListener() {
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            viewLogin.setVisible(true);
-            viewDaftar.setVisible(false);
-            viewLupaPassword.setVisible(false);
-        }
-    }
-
-    private class exitListener implements ActionListener {
-
-        public exitListener() {
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            System.out.println("Program Berhenti");
-            System.exit(0);
-        }
-    }
-
 }

@@ -120,12 +120,12 @@ public class login extends javax.swing.JFrame {
         jPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 230, 209, -1));
 
         txtLupaPassword.setForeground(new java.awt.Color(255, 255, 51));
-        txtLupaPassword.setText("Lupa password?");
+        txtLupaPassword.setText("Forgotten Password");
         txtLupaPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel.add(txtLupaPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 285, -1, -1));
+        jPanel.add(txtLupaPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 285, -1, -1));
 
         txtDaftar.setForeground(new java.awt.Color(255, 255, 51));
-        txtDaftar.setText("Belum punya akun?");
+        txtDaftar.setText("Create New Account");
         txtDaftar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel.add(txtDaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 285, -1, -1));
 

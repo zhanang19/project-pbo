@@ -28,9 +28,9 @@ public class Config {
             String password = "1234";
             try {
                 DBConnection = (Connection) DriverManager.getConnection(url+database, username, password);
-                System.out.println("Koneksi Berhasil");
+                System.out.println("Connection Successful");
             } catch (SQLException e) {
-                System.out.println("Koneksi Gagal");
+                System.out.println("Connection Failed");
             }
         }
         return DBConnection;

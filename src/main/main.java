@@ -7,21 +7,21 @@ package main;
 
 import model.M_user;
 import view.login;
-import view.daftar;
-import view.lupa_password;
-import controller.user;
+import view.register;
+import view.forgotten_password;
+import controller.users;
 /**
  *
  * @author ASUS
  */
-public class MVC {
+public class main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        user control;
-        control = new user(new login(), new daftar(), new lupa_password(),new M_user());
+        users control;
+        control = new users(new login(), new register(), new forgotten_password(),new M_user());
     }
     
 }

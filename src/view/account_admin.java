@@ -39,10 +39,6 @@ public class account_admin extends javax.swing.JFrame {
         btnTAnimal.addActionListener(a);
     }
 
-    public void calculatorListener(ActionListener a) {
-        btnCalculator.addActionListener(a);
-    }
-
     public void logoutListener(ActionListener a) {
         btnLogout.addActionListener(a);
     }
@@ -91,7 +87,6 @@ public class account_admin extends javax.swing.JFrame {
         btnAccount = new javax.swing.JButton();
         btnRAnimal = new javax.swing.JButton();
         btnTAnimal = new javax.swing.JButton();
-        btnCalculator = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
@@ -128,7 +123,7 @@ public class account_admin extends javax.swing.JFrame {
         btnAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_crowd_50px.png"))); // NOI18N
-        btnAccount.setText("Akun");
+        btnAccount.setText("Account");
         btnAccount.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAccount.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 80));
@@ -136,7 +131,7 @@ public class account_admin extends javax.swing.JFrame {
         btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
-        btnRAnimal.setText("Rekam Hewan");
+        btnRAnimal.setText("Recording Animal");
         btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -145,25 +140,16 @@ public class account_admin extends javax.swing.JFrame {
         btnTAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnTAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
-        btnTAnimal.setText("Tipe Hewan");
+        btnTAnimal.setText("Animal Type");
         btnTAnimal.setContentAreaFilled(false);
         btnTAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnTAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnTAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
 
-        btnCalculator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
-        btnCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_calculator_48px_1.png"))); // NOI18N
-        btnCalculator.setText("Kalkulator");
-        btnCalculator.setContentAreaFilled(false);
-        btnCalculator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCalculator.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 155, 80));
-
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_exit_32px_1.png"))); // NOI18N
-        btnLogout.setText("Keluar");
+        btnLogout.setText("Logout");
         btnLogout.setContentAreaFilled(false);
         btnLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -173,21 +159,21 @@ public class account_admin extends javax.swing.JFrame {
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/tambah.png"))); // NOI18N
-        btnAdd.setText("Tambah");
+        btnAdd.setText("Add");
         btnAdd.setContentAreaFilled(false);
         jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 615, 120, -1));
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/hapus.png"))); // NOI18N
-        btnDelete.setText("Hapus");
+        btnDelete.setText("Delete");
         btnDelete.setContentAreaFilled(false);
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 615, 120, -1));
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/edit.png"))); // NOI18N
-        btnUpdate.setText("Ubah");
+        btnUpdate.setText("Update");
         btnUpdate.setContentAreaFilled(false);
         jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 615, 120, -1));
 
@@ -369,7 +355,6 @@ public class account_admin extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JButton btnAccount;
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnCalculator;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRAnimal;
