@@ -7,14 +7,17 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import view.recordingAnimal_admin;
-import view.calculator;
 import view.login;
 import view.account_admin;
+import view.recordingAnimal_admin;
 import view.animal_type;
+import view.calculator;
 import model.m_recordingAnimal;
 import model.M_user;
+import view.daftar;
+import view.lupa_password;
 
 /**
  *
@@ -37,18 +40,18 @@ public class admin {
         viewRecordingAnimal.accountListener(new accountListener());
         viewRecordingAnimal.tAnimalListener(new tAnimalListener());
         viewRecordingAnimal.calculatorListener(new calculatorListener());
-        viewRecordingAnimal.logoutListener(new logoutListener());
-        viewRecordingAnimal.addListener(new addListener());
-        viewRecordingAnimal.deleteListener(new deleteListener());
-        viewRecordingAnimal.updateListener(new updateListener());
-        viewRecordingAnimal.refreshListener(new refreshListener());
+        viewRecordingAnimal.logoutListener(new logout(viewRecordingAnimal));
+        viewRecordingAnimal.addListener(new addRecordListener());
+        viewRecordingAnimal.deleteListener(new deleteRecordListener());
+        viewRecordingAnimal.updateListener(new updateRecordListener());
+        viewRecordingAnimal.refreshListener(new refreshRecordListener());
 
         viewCalculator = new calculator();
         viewCalculator.rAnimalListener(new rAnimalListener());
         viewCalculator.accountListener(new accountListener());
         viewCalculator.tAnimalListener(new tAnimalListener());
         viewCalculator.calculatorListener(new calculatorListener());
-        viewCalculator.logoutListener(new logoutListener());
+        viewCalculator.logoutListener(new logout(viewCalculator));
         viewCalculator.countListener(new countListener());
 
         viewAccount = new account_admin();
@@ -56,22 +59,26 @@ public class admin {
         viewAccount.accountListener(new accountListener());
         viewAccount.tAnimalListener(new tAnimalListener());
         viewAccount.calculatorListener(new calculatorListener());
-        viewAccount.logoutListener(new logoutListener());
-        viewAccount.addListener(new addListener());
-        viewAccount.deleteListener(new deleteListener());
-        viewAccount.updateListener(new updateListener());
-        viewAccount.refreshListener(new refreshListener());
+        viewAccount.logoutListener(new logout(viewAccount));
+        viewAccount.addListener(new addAccountListener());
+        viewAccount.deleteListener(new deleteAccountListener());
+        viewAccount.updateListener(new updateAccountListener());
+        viewAccount.refreshListener(new refreshAccountListener());
 
         viewAnimalType = new animal_type();
         viewAnimalType.rAnimalListener(new rAnimalListener());
         viewAnimalType.accountListener(new accountListener());
         viewAnimalType.tAnimalListener(new tAnimalListener());
         viewAnimalType.calculatorListener(new calculatorListener());
-        viewAnimalType.logoutListener(new logoutListener());
-        viewAnimalType.addListener(new addListener());
-        viewAnimalType.deleteListener(new deleteListener());
-        viewAnimalType.updateListener(new updateListener());
-        viewAnimalType.refreshListener(new refreshListener());
+        viewAnimalType.logoutListener(new logout(viewAnimalType));
+        viewAnimalType.addTypePetListener(new addTypePetListener());
+        viewAnimalType.deleteTypePetListener(new deleteTypePetListener());
+        viewAnimalType.updateTypePetListener(new updateTypePetListener());
+        viewAnimalType.refreshTypePetListener(new refreshTypePetListener());
+        viewAnimalType.addAnimalTypeListener(new addAnimalTypeListener());
+        viewAnimalType.deleteAnimalTypeListener(new deleteAnimalTypeListener());
+        viewAnimalType.updateAnimalTypeListener(new updateAnimalTypeListener());
+        viewAnimalType.refreshAnimalTypeListener(new refreshAnimalTypeListener());
 
         modelAnimal = new m_recordingAnimal();
         bacaTabelRecord();
@@ -80,37 +87,39 @@ public class admin {
         readTableUsers();
     }
 
-    private void bacaTabelRecord() {
-        viewRecordingAnimal.setTabel(modelAnimal.bacaTabel());
+    //<editor-fold defaultstate="collapse" desc="Account">
+    private class accountListener implements ActionListener {
+
+        public accountListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            viewRecordingAnimal.setVisible(false);
+            viewCalculator.setVisible(false);
+            viewAccount.setVisible(true);
+            viewAnimalType.setVisible(false);
+        }
     }
 
     private void readTableUsers() {
         viewAccount.setTabel(modelUsers.readTableUsers());
     }
 
-    private class addListener implements ActionListener {
+    private class addAccountListener implements ActionListener {
 
-        public addListener() {
+        public addAccountListener() {
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menambahkan data");
-//            if (model.record(
-//                    
-//            )) {
-//                JOptionPane.showMessageDialog(viewRecordingAnimal, "Data Berhasil ditambahkan");
-//                viewRecordingAnimal.setVisible(true);
-//
-//            } else {
-//                JOptionPane.showMessageDialog(viewRecordingAnimal, "Gagal Menambahkan Data");
-//            }
         }
     }
 
-    private class deleteListener implements ActionListener {
+    private class deleteAccountListener implements ActionListener {
 
-        public deleteListener() {
+        public deleteAccountListener() {
         }
 
         @Override
@@ -119,9 +128,70 @@ public class admin {
         }
     }
 
-    private class updateListener implements ActionListener {
+    private class updateAccountListener implements ActionListener {
 
-        public updateListener() {
+        public updateAccountListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk mengubah data");
+        }
+    }
+
+    private class refreshAccountListener implements ActionListener {
+
+        public refreshAccountListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk merefresh data");
+        }
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapse" desc="Recording Animal">
+    private class rAnimalListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            viewRecordingAnimal.setVisible(true);
+            viewCalculator.setVisible(false);
+            viewAccount.setVisible(false);
+            viewAnimalType.setVisible(false);
+        }
+    }
+
+    private void bacaTabelRecord() {
+        viewRecordingAnimal.setTabel(modelAnimal.bacaTabel());
+    }
+
+    private class addRecordListener implements ActionListener {
+
+        public addRecordListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menambahkan data");
+        }
+    }
+
+    private class deleteRecordListener implements ActionListener {
+
+        public deleteRecordListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menghapus data");
+        }
+    }
+
+    private class updateRecordListener implements ActionListener {
+
+        public updateRecordListener() {
         }
 
         @Override
@@ -130,14 +200,134 @@ public class admin {
         }
     }
 
-    private class refreshListener implements ActionListener {
+    private class refreshRecordListener implements ActionListener {
 
-        public refreshListener() {
+        public refreshRecordListener() {
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk merefresh data");
+        }
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapse" desc="Type Animal">
+    private class tAnimalListener implements ActionListener {
+
+        public tAnimalListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            viewRecordingAnimal.setVisible(false);
+            viewCalculator.setVisible(false);
+            viewAccount.setVisible(false);
+            viewAnimalType.setVisible(true);
+        }
+    }
+
+    private class addTypePetListener implements ActionListener {
+
+        public addTypePetListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menambahkan data");
+        }
+    }
+
+    private class deleteTypePetListener implements ActionListener {
+
+        public deleteTypePetListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menghapus data");
+        }
+    }
+
+    private class updateTypePetListener implements ActionListener {
+
+        public updateTypePetListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk mengubah data");
+        }
+    }
+
+    private class refreshTypePetListener implements ActionListener {
+
+        public refreshTypePetListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk merefresh data");
+        }
+    }
+
+    private class addAnimalTypeListener implements ActionListener {
+
+        public addAnimalTypeListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menambahkan data");
+        }
+    }
+
+    private class deleteAnimalTypeListener implements ActionListener {
+
+        public deleteAnimalTypeListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menghapus data");
+        }
+    }
+
+    private class updateAnimalTypeListener implements ActionListener {
+
+        public updateAnimalTypeListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk mengubah data");
+        }
+    }
+
+    private class refreshAnimalTypeListener implements ActionListener {
+
+        public refreshAnimalTypeListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk merefresh data");
+        }
+    }
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapse" desc="Calculator">
+    private class calculatorListener implements ActionListener {
+
+        public calculatorListener() {
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            viewRecordingAnimal.setVisible(false);
+            viewCalculator.setVisible(true);
+            viewAccount.setVisible(false);
+            viewAnimalType.setVisible(false);
         }
     }
 
@@ -173,78 +363,27 @@ public class admin {
             }
         }
     }
+    //</editor-fold>
 
-    private class accountListener implements ActionListener {
+    public class logout implements ActionListener {
 
-        public accountListener() {
+        private final JFrame view;
+
+        public logout(JFrame v) {
+            view = v;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            viewRecordingAnimal.setVisible(false);
-            viewCalculator.setVisible(false);
-            viewAccount.setVisible(true);
-            viewAnimalType.setVisible(false);
-            viewLogin.setVisible(false);
-        }
-    }
-
-    private class rAnimalListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            viewRecordingAnimal.setVisible(true);
-            viewCalculator.setVisible(false);
-            viewAccount.setVisible(false);
-            viewAnimalType.setVisible(false);
-            viewLogin.setVisible(false);
-        }
-    }
-
-    private class tAnimalListener implements ActionListener {
-
-        public tAnimalListener() {
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            viewRecordingAnimal.setVisible(false);
-            viewCalculator.setVisible(false);
-            viewAccount.setVisible(false);
-            viewAnimalType.setVisible(true);
-            viewLogin.setVisible(false);
-        }
-    }
-
-    private class calculatorListener implements ActionListener {
-
-        public calculatorListener() {
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            viewRecordingAnimal.setVisible(false);
-            viewCalculator.setVisible(true);
-            viewAccount.setVisible(false);
-            viewAnimalType.setVisible(false);
-            viewLogin.setVisible(false);
-        }
-    }
-
-    private class logoutListener implements ActionListener {
-
-        public logoutListener() {
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-//            viewRecordingAnimal.setVisible(false);
-//            viewCalculator.setVisible(false);
-//            viewAccount.setVisible(false);            
-//            viewAnimalType.setVisible(false);    
-//            viewLogin.setVisible(true);
-            System.out.println("Program Berhenti");
-            System.exit(0);
+            int pilihan = JOptionPane.showConfirmDialog(view, "Yakin Ingin Logout?", "Logout", JOptionPane.YES_NO_OPTION);
+            if (pilihan == JOptionPane.YES_OPTION) {
+                login viewLogin = new login();
+                M_user model = new M_user();
+                user user = new user(new login(), new daftar(), new lupa_password(),new M_user());
+                view.dispose();
+            } else {
+                //empty
+            }
         }
     }
 }

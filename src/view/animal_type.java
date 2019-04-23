@@ -22,8 +22,10 @@ public class animal_type extends javax.swing.JFrame {
     public animal_type() {
         initComponents();
         menu.setBackground(new Color(0, 0, 0, 40));
-        button.setBackground(new Color(0, 0, 0, 40));
-        form.setBackground(new Color(0, 0, 0, 40));
+        button_typePet.setBackground(new Color(0, 0, 0, 40));
+        form_typePet.setBackground(new Color(0, 0, 0, 40));
+        button_animalType.setBackground(new Color(0, 0, 0, 40));
+        form_animalType.setBackground(new Color(0, 0, 0, 40));
     }
 
     //<editor-fold defaultstate="collapse" desc="ACTION LISTENER">
@@ -47,37 +49,64 @@ public class animal_type extends javax.swing.JFrame {
         btnLogout.addActionListener(a);
     }
 
-    public void addListener(ActionListener a) {
-        btnAdd.addActionListener(a);
+    public void addTypePetListener(ActionListener a) {
+        btnAdd_typePet.addActionListener(a);
     }
 
-    public void deleteListener(ActionListener a) {
-        btnDelete.addActionListener(a);
+    public void deleteTypePetListener(ActionListener a) {
+        btnDelete_typePet.addActionListener(a);
     }
 
-    public void updateListener(ActionListener a) {
-        btnUpdate.addActionListener(a);
+    public void updateTypePetListener(ActionListener a) {
+        btnUpdate_typePet.addActionListener(a);
     }
 
-    public void refreshListener(ActionListener a) {
-        btnRefresh.addActionListener(a);
+    public void refreshTypePetListener(ActionListener a) {
+        btnRefresh_typePet.addActionListener(a);
+    }
+
+    public void addAnimalTypeListener(ActionListener a) {
+        btnAdd_animalType.addActionListener(a);
+    }
+
+    public void deleteAnimalTypeListener(ActionListener a) {
+        btnDelete_animalType.addActionListener(a);
+    }
+
+    public void updateAnimalTypeListener(ActionListener a) {
+        btnUpdate_animalType.addActionListener(a);
+    }
+
+    public void refreshAnimalTypeListener(ActionListener a) {
+        btnRefresh_animalType.addActionListener(a);
     }
     //</editor-fold>
-    
+
     //<editor-fold defaultstate="collapse" desc="Tabel">
-    public void setTabel(DefaultTableModel t) {
-        tabelRecord.setModel(t);
+    public void setTabelTypePet(DefaultTableModel t) {
+        tabelTypePet.setModel(t);
     }
 
-    public void tabelListener(MouseListener m) {
-        tabelRecord.addMouseListener(m);
+    public void tabelTypePetListener(MouseListener m) {
+        tabelTypePet.addMouseListener(m);
     }
-    
-    public int getBarisTerpilih() {
-        return tabelRecord.getSelectedRow();
+
+    public int getBarisTerpilihTypePet() {
+        return tabelTypePet.getSelectedRow();
+    }
+    public void setTabelAnimalType(DefaultTableModel t) {
+        tabelAnimalType.setModel(t);
+    }
+
+    public void tabelAnimalTypeListener(MouseListener m) {
+        tabelAnimalType.addMouseListener(m);
+    }
+
+    public int getBarisTerpilihAnimalType() {
+        return tabelAnimalType.getSelectedRow();
     }
     //</editor-fold>
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,25 +117,33 @@ public class animal_type extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        judul = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         btnAccount = new javax.swing.JButton();
         btnRAnimal = new javax.swing.JButton();
         btnTAnimal = new javax.swing.JButton();
         btnCalculator = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
-        btnAdd = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
-        btnRefresh = new javax.swing.JButton();
-        scroll = new javax.swing.JScrollPane();
-        tabelRecord = new javax.swing.JTable();
-        button = new javax.swing.JPanel();
+        btnAdd_typePet = new javax.swing.JButton();
+        btnDelete_typePet = new javax.swing.JButton();
+        btnUpdate_typePet = new javax.swing.JButton();
+        btnRefresh_typePet = new javax.swing.JButton();
+        button_typePet = new javax.swing.JPanel();
+        btnAdd_animalType = new javax.swing.JButton();
+        btnDelete_animalType = new javax.swing.JButton();
+        btnUpdate_animalType = new javax.swing.JButton();
+        btnRefresh_animalType = new javax.swing.JButton();
+        button_animalType = new javax.swing.JPanel();
+        scrollAnimalType = new javax.swing.JScrollPane();
+        tabelAnimalType = new javax.swing.JTable();
+        scrollTipePet = new javax.swing.JScrollPane();
+        tabelTypePet = new javax.swing.JTable();
         menu = new javax.swing.JPanel();
-        name = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        user = new javax.swing.JLabel();
-        txtUser = new javax.swing.JTextField();
-        form = new javax.swing.JPanel();
+        tipePet = new javax.swing.JLabel();
+        txtTypePet = new javax.swing.JTextField();
+        txtAnimalType = new javax.swing.JTextField();
+        form_typePet = new javax.swing.JPanel();
+        form_animalType = new javax.swing.JPanel();
+        animalType = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,16 +151,16 @@ public class animal_type extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        judul.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        judul.setForeground(new java.awt.Color(255, 255, 255));
-        judul.setText("SISTEM INFORMASI PENITIPAN HEWAN TERNAK");
-        judul.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
+        title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        title.setForeground(new java.awt.Color(255, 255, 255));
+        title.setText("gombing.id");
+        title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
 
         btnAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_crowd_50px.png"))); // NOI18N
-        btnAccount.setText("Account");
+        btnAccount.setText("Akun");
         btnAccount.setContentAreaFilled(false);
         btnAccount.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAccount.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -132,7 +169,7 @@ public class animal_type extends javax.swing.JFrame {
         btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
-        btnRAnimal.setText("Recording Animal");
+        btnRAnimal.setText("Rekam Hewan");
         btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -141,8 +178,7 @@ public class animal_type extends javax.swing.JFrame {
         btnTAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnTAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
-        btnTAnimal.setText("Type Animal");
-        btnTAnimal.setContentAreaFilled(false);
+        btnTAnimal.setText("Tipe Hewan");
         btnTAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnTAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnTAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
@@ -150,7 +186,7 @@ public class animal_type extends javax.swing.JFrame {
         btnCalculator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
         btnCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_calculator_48px_1.png"))); // NOI18N
-        btnCalculator.setText("Calculator");
+        btnCalculator.setText("Kalkulator");
         btnCalculator.setContentAreaFilled(false);
         btnCalculator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCalculator.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -159,50 +195,100 @@ public class animal_type extends javax.swing.JFrame {
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_exit_32px_1.png"))); // NOI18N
-        btnLogout.setText("LogOut");
+        btnLogout.setText("Keluar");
         btnLogout.setContentAreaFilled(false);
         btnLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnLogout.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 155, 60));
 
-        btnAdd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/tambah.png"))); // NOI18N
-        btnAdd.setText("Add");
-        btnAdd.setContentAreaFilled(false);
-        jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 615, 120, -1));
+        btnAdd_typePet.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAdd_typePet.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd_typePet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/tambah.png"))); // NOI18N
+        btnAdd_typePet.setContentAreaFilled(false);
+        jPanel1.add(btnAdd_typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 50, -1));
 
-        btnDelete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/hapus.png"))); // NOI18N
-        btnDelete.setText("Delete");
-        btnDelete.setContentAreaFilled(false);
-        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 615, 120, -1));
+        btnDelete_typePet.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnDelete_typePet.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete_typePet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/hapus.png"))); // NOI18N
+        btnDelete_typePet.setContentAreaFilled(false);
+        jPanel1.add(btnDelete_typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 50, -1));
 
-        btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/edit.png"))); // NOI18N
-        btnUpdate.setText("Update");
-        btnUpdate.setContentAreaFilled(false);
-        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 615, 120, -1));
+        btnUpdate_typePet.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnUpdate_typePet.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate_typePet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/edit.png"))); // NOI18N
+        btnUpdate_typePet.setContentAreaFilled(false);
+        jPanel1.add(btnUpdate_typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 50, -1));
 
-        btnRefresh.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
-        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/refresh.png"))); // NOI18N
-        btnRefresh.setText("Refresh");
-        btnRefresh.setContentAreaFilled(false);
-        jPanel1.add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 615, 120, -1));
+        btnRefresh_typePet.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnRefresh_typePet.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh_typePet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/refresh.png"))); // NOI18N
+        btnRefresh_typePet.setContentAreaFilled(false);
+        jPanel1.add(btnRefresh_typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 50, -1));
 
-        scroll.setAutoscrolls(true);
+        button_typePet.setBackground(new java.awt.Color(153, 153, 153));
 
-        tabelRecord.setModel(new javax.swing.table.DefaultTableModel(
+        javax.swing.GroupLayout button_typePetLayout = new javax.swing.GroupLayout(button_typePet);
+        button_typePet.setLayout(button_typePetLayout);
+        button_typePetLayout.setHorizontalGroup(
+            button_typePetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        button_typePetLayout.setVerticalGroup(
+            button_typePetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(button_typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 200, 38));
+
+        btnAdd_animalType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnAdd_animalType.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/tambah.png"))); // NOI18N
+        btnAdd_animalType.setContentAreaFilled(false);
+        jPanel1.add(btnAdd_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 100, 50, -1));
+
+        btnDelete_animalType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnDelete_animalType.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/hapus.png"))); // NOI18N
+        btnDelete_animalType.setContentAreaFilled(false);
+        jPanel1.add(btnDelete_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 50, -1));
+
+        btnUpdate_animalType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnUpdate_animalType.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/edit.png"))); // NOI18N
+        btnUpdate_animalType.setContentAreaFilled(false);
+        jPanel1.add(btnUpdate_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 100, 50, -1));
+
+        btnRefresh_animalType.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnRefresh_animalType.setForeground(new java.awt.Color(255, 255, 255));
+        btnRefresh_animalType.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/refresh.png"))); // NOI18N
+        btnRefresh_animalType.setContentAreaFilled(false);
+        jPanel1.add(btnRefresh_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 100, 50, -1));
+
+        button_animalType.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout button_animalTypeLayout = new javax.swing.GroupLayout(button_animalType);
+        button_animalType.setLayout(button_animalTypeLayout);
+        button_animalTypeLayout.setHorizontalGroup(
+            button_animalTypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        button_animalTypeLayout.setVerticalGroup(
+            button_animalTypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 38, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(button_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 100, 200, 38));
+
+        scrollAnimalType.setAutoscrolls(true);
+
+        tabelAnimalType.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null}
             },
             new String [] {
-                "Id", "Type Pet"
+                "Id", "Tipe Hewan"
             }
         ) {
             Class[] types = new Class [] {
@@ -213,25 +299,34 @@ public class animal_type extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tabelRecord.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        scroll.setViewportView(tabelRecord);
+        tabelAnimalType.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        scrollAnimalType.setViewportView(tabelAnimalType);
 
-        jPanel1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 970, 380));
+        jPanel1.add(scrollAnimalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 190, 380));
 
-        button.setBackground(new java.awt.Color(153, 153, 153));
+        scrollTipePet.setAutoscrolls(true);
 
-        javax.swing.GroupLayout buttonLayout = new javax.swing.GroupLayout(button);
-        button.setLayout(buttonLayout);
-        buttonLayout.setHorizontalGroup(
-            buttonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
-        );
-        buttonLayout.setVerticalGroup(
-            buttonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
-        );
+        tabelTypePet.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Id", "Tipe Gen"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class
+            };
 
-        jPanel1.add(button, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 615, 480, 38));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabelTypePet.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        scrollTipePet.setViewportView(tabelTypePet);
+
+        jPanel1.add(scrollTipePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 190, 380));
 
         menu.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -248,38 +343,58 @@ public class animal_type extends javax.swing.JFrame {
 
         jPanel1.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 380));
 
-        name.setForeground(new java.awt.Color(255, 255, 255));
-        name.setText("Animal Type");
-        name.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, -1, -1));
+        tipePet.setForeground(new java.awt.Color(255, 255, 255));
+        tipePet.setText("Tipe Gen");
+        tipePet.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(tipePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 70, -1, -1));
 
-        txtName.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 210, -1));
+        txtTypePet.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtTypePet.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtTypePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 160, -1));
 
-        user.setForeground(new java.awt.Color(255, 255, 255));
-        user.setText("Type Pet");
-        user.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 490, -1, -1));
+        txtAnimalType.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtAnimalType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(txtAnimalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 70, 160, -1));
 
-        txtUser.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 490, 210, -1));
+        form_typePet.setBackground(new java.awt.Color(153, 153, 153));
 
-        form.setBackground(new java.awt.Color(153, 153, 153));
-
-        javax.swing.GroupLayout formLayout = new javax.swing.GroupLayout(form);
-        form.setLayout(formLayout);
-        formLayout.setHorizontalGroup(
-            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
+        javax.swing.GroupLayout form_typePetLayout = new javax.swing.GroupLayout(form_typePet);
+        form_typePet.setLayout(form_typePetLayout);
+        form_typePetLayout.setHorizontalGroup(
+            form_typePetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 240, Short.MAX_VALUE)
         );
-        formLayout.setVerticalGroup(
-            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+        form_typePetLayout.setVerticalGroup(
+            form_typePetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 690, 70));
+        jPanel1.add(form_typePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 240, 40));
+
+        form_animalType.setBackground(new java.awt.Color(153, 153, 153));
+
+        animalType.setForeground(new java.awt.Color(255, 255, 255));
+        animalType.setText("Tipe Hewan");
+        animalType.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        javax.swing.GroupLayout form_animalTypeLayout = new javax.swing.GroupLayout(form_animalType);
+        form_animalType.setLayout(form_animalTypeLayout);
+        form_animalTypeLayout.setHorizontalGroup(
+            form_animalTypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(form_animalTypeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(animalType, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+        form_animalTypeLayout.setVerticalGroup(
+            form_animalTypeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(form_animalTypeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(animalType)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(form_animalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 60, 270, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/assets/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 660));
@@ -336,26 +451,34 @@ public class animal_type extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel animalType;
     private javax.swing.JLabel background;
     private javax.swing.JButton btnAccount;
-    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnAdd_animalType;
+    private javax.swing.JButton btnAdd_typePet;
     private javax.swing.JButton btnCalculator;
-    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDelete_animalType;
+    private javax.swing.JButton btnDelete_typePet;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnRAnimal;
-    private javax.swing.JButton btnRefresh;
+    private javax.swing.JButton btnRefresh_animalType;
+    private javax.swing.JButton btnRefresh_typePet;
     private javax.swing.JButton btnTAnimal;
-    private javax.swing.JButton btnUpdate;
-    private javax.swing.JPanel button;
-    private javax.swing.JPanel form;
+    private javax.swing.JButton btnUpdate_animalType;
+    private javax.swing.JButton btnUpdate_typePet;
+    private javax.swing.JPanel button_animalType;
+    private javax.swing.JPanel button_typePet;
+    private javax.swing.JPanel form_animalType;
+    private javax.swing.JPanel form_typePet;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel judul;
     private javax.swing.JPanel menu;
-    private javax.swing.JLabel name;
-    private javax.swing.JScrollPane scroll;
-    private javax.swing.JTable tabelRecord;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtUser;
-    private javax.swing.JLabel user;
+    private javax.swing.JScrollPane scrollAnimalType;
+    private javax.swing.JScrollPane scrollTipePet;
+    private javax.swing.JTable tabelAnimalType;
+    private javax.swing.JTable tabelTypePet;
+    private javax.swing.JLabel tipePet;
+    private javax.swing.JLabel title;
+    private javax.swing.JTextField txtAnimalType;
+    private javax.swing.JTextField txtTypePet;
     // End of variables declaration//GEN-END:variables
 }

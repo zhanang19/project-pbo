@@ -7,6 +7,8 @@ package main;
 
 import model.M_user;
 import view.login;
+import view.daftar;
+import view.lupa_password;
 import controller.user;
 /**
  *
@@ -19,7 +21,7 @@ public class MVC {
      */
     public static void main(String[] args) {
         user control;
-        control = new user(new login(),new M_user());
+        control = new user(new login(), new daftar(), new lupa_password(),new M_user());
     }
     
 }

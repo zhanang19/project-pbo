@@ -111,7 +111,7 @@ public class calculator extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel = new javax.swing.JPanel();
-        judul = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         kalkulator = new javax.swing.JPanel();
         gender = new javax.swing.JLabel();
         cmbGender = new javax.swing.JComboBox<>();
@@ -144,11 +144,11 @@ public class calculator extends javax.swing.JFrame {
 
         jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        judul.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        judul.setForeground(new java.awt.Color(255, 255, 255));
-        judul.setText("SISTEM INFORMASI PENITIPAN HEWAN TERNAK");
-        judul.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
+        title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        title.setForeground(new java.awt.Color(255, 255, 255));
+        title.setText("gombing.id");
+        title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
 
         kalkulator.setBackground(new java.awt.Color(153, 153, 153));
         kalkulator.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -241,7 +241,7 @@ public class calculator extends javax.swing.JFrame {
         btnAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_crowd_50px.png"))); // NOI18N
-        btnAccount.setText("Account");
+        btnAccount.setText("Akun");
         btnAccount.setContentAreaFilled(false);
         btnAccount.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAccount.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -250,7 +250,7 @@ public class calculator extends javax.swing.JFrame {
         btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
-        btnRAnimal.setText("Recording Animal");
+        btnRAnimal.setText("Rekam Hewan");
         btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -259,7 +259,7 @@ public class calculator extends javax.swing.JFrame {
         btnTAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnTAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
-        btnTAnimal.setText("Type Animal");
+        btnTAnimal.setText("Tipe Hewan");
         btnTAnimal.setContentAreaFilled(false);
         btnTAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnTAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -268,8 +268,7 @@ public class calculator extends javax.swing.JFrame {
         btnCalculator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
         btnCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_calculator_48px_1.png"))); // NOI18N
-        btnCalculator.setText("Calculator");
-        btnCalculator.setContentAreaFilled(false);
+        btnCalculator.setText("Kalkulator");
         btnCalculator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCalculator.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel.add(btnCalculator, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 155, 80));
@@ -277,7 +276,7 @@ public class calculator extends javax.swing.JFrame {
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_exit_32px_1.png"))); // NOI18N
-        btnLogout.setText("LogOut");
+        btnLogout.setText("Keluar");
         btnLogout.setContentAreaFilled(false);
         btnLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -371,11 +370,11 @@ public class calculator extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbGender;
     private javax.swing.JLabel gender;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JLabel judul;
     private javax.swing.JPanel kalkulator;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel message;
     private javax.swing.JPanel result;
+    private javax.swing.JLabel title;
     private javax.swing.JFormattedTextField txtAge;
     private javax.swing.JFormattedTextField txtBodyLength;
     private javax.swing.JFormattedTextField txtChestSize;

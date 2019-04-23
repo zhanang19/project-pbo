@@ -87,7 +87,7 @@ public class account_admin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        judul = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         btnAccount = new javax.swing.JButton();
         btnRAnimal = new javax.swing.JButton();
         btnTAnimal = new javax.swing.JButton();
@@ -119,17 +119,16 @@ public class account_admin extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        judul.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        judul.setForeground(new java.awt.Color(255, 255, 255));
-        judul.setText("SISTEM INFORMASI PENITIPAN HEWAN TERNAK");
-        judul.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
+        title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        title.setForeground(new java.awt.Color(255, 255, 255));
+        title.setText("gombing.id");
+        title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
 
         btnAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAccount.setForeground(new java.awt.Color(255, 255, 255));
         btnAccount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_crowd_50px.png"))); // NOI18N
-        btnAccount.setText("Account");
-        btnAccount.setContentAreaFilled(false);
+        btnAccount.setText("Akun");
         btnAccount.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAccount.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 80));
@@ -137,7 +136,7 @@ public class account_admin extends javax.swing.JFrame {
         btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
-        btnRAnimal.setText("Recording Animal");
+        btnRAnimal.setText("Rekam Hewan");
         btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -146,7 +145,7 @@ public class account_admin extends javax.swing.JFrame {
         btnTAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnTAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnTAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
-        btnTAnimal.setText("Type Animal");
+        btnTAnimal.setText("Tipe Hewan");
         btnTAnimal.setContentAreaFilled(false);
         btnTAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnTAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -155,7 +154,7 @@ public class account_admin extends javax.swing.JFrame {
         btnCalculator.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCalculator.setForeground(new java.awt.Color(255, 255, 255));
         btnCalculator.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_calculator_48px_1.png"))); // NOI18N
-        btnCalculator.setText("Calculator");
+        btnCalculator.setText("Kalkulator");
         btnCalculator.setContentAreaFilled(false);
         btnCalculator.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCalculator.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -164,7 +163,7 @@ public class account_admin extends javax.swing.JFrame {
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_exit_32px_1.png"))); // NOI18N
-        btnLogout.setText("LogOut");
+        btnLogout.setText("Keluar");
         btnLogout.setContentAreaFilled(false);
         btnLogout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLogout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -174,21 +173,21 @@ public class account_admin extends javax.swing.JFrame {
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/tambah.png"))); // NOI18N
-        btnAdd.setText("Add");
+        btnAdd.setText("Tambah");
         btnAdd.setContentAreaFilled(false);
         jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 615, 120, -1));
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/hapus.png"))); // NOI18N
-        btnDelete.setText("Delete");
+        btnDelete.setText("Hapus");
         btnDelete.setContentAreaFilled(false);
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 615, 120, -1));
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/edit.png"))); // NOI18N
-        btnUpdate.setText("Update");
+        btnUpdate.setText("Ubah");
         btnUpdate.setContentAreaFilled(false);
         jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 615, 120, -1));
 
@@ -382,13 +381,13 @@ public class account_admin extends javax.swing.JFrame {
     private javax.swing.JPanel form;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JLabel judul;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel name;
     private javax.swing.JLabel password;
     private javax.swing.JScrollPane scroll;
     private javax.swing.JLabel skinColor;
     private javax.swing.JTable tabelRecord;
+    private javax.swing.JLabel title;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtSkinColor;

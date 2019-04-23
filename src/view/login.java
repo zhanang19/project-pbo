@@ -7,6 +7,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.JTextField;
 import javax.swing.event.AncestorListener;
 
@@ -30,12 +31,12 @@ public class login extends javax.swing.JFrame {
         btnLogin.addActionListener(a);
     }
     
-    public void daftarListener(AncestorListener a){
-        txtDaftar.addAncestorListener(a);
+    public void daftarListener(MouseListener a){
+        txtDaftar.addMouseListener(a);
     }
     
-    public void lupaPasswordListener(AncestorListener a){
-        txtLupaPassword.addAncestorListener(a);
+    public void lupaPasswordListener(MouseListener a){
+        txtLupaPassword.addMouseListener(a);
     }
     
     public void exitListener(ActionListener a){
@@ -74,7 +75,7 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel = new javax.swing.JPanel();
-        judul = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         username = new javax.swing.JLabel();
         password = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
@@ -94,11 +95,11 @@ public class login extends javax.swing.JFrame {
         jPanel.setBackground(new java.awt.Color(102, 102, 102));
         jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        judul.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        judul.setForeground(new java.awt.Color(255, 255, 255));
-        judul.setText("SISTEM INFORMASI PENITIPAN HEWAN TERNAK");
-        judul.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 11, -1, -1));
+        title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        title.setForeground(new java.awt.Color(255, 255, 255));
+        title.setText("gombing.id");
+        title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
 
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setText("Username");
@@ -225,10 +226,10 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JLabel judul;
     private javax.swing.JPanel panelDaftarLupaPass;
     private javax.swing.JPanel panelFormLogin;
     private javax.swing.JLabel password;
+    private javax.swing.JLabel title;
     private javax.swing.JLabel txtDaftar;
     private javax.swing.JLabel txtLupaPassword;
     private javax.swing.JPasswordField txtPassword;
