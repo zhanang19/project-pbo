@@ -25,7 +25,10 @@ public class M_recording_animal {
     }
 
     public DefaultTableModel readTable_RecordingAnimal() {
-        String query = "Select a.id, a.animal_name, animal_type.animal_type, a.gender, a.birth_date, users.name, a.skin_color, a.ear_type, type_pet.type_pet, a.updated_at, a.created_at From public.animal a join public.animal_type on a.animal_type = animal_type.id join public.users on a.id_user = users.id join public.type_pet on a.type_pet = type_pet.id;";
+        String query = "Select a.id, a.animal_name, animal_type.animal_type, a.gender, a.birth_date, "
+                + "users.name, a.skin_color, a.ear_type, type_pet.type_pet, a.updated_at, a.created_at "
+                + "From public.animal a join public.animal_type on a.animal_type = animal_type.id "
+                + "join public.users on a.id_user = users.id join public.type_pet on a.type_pet = type_pet.id;";
         String namaKolom[] = {
             "Id",
             "Animal Name",

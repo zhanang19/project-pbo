@@ -57,7 +57,7 @@ public class M_animal_care {
                 });
             }
         } catch (SQLException e) {
-            System.out.println("Error : "+e);
+            System.out.println("Something was wrong. Error: " + e);
         }
         return tabel;
     }        

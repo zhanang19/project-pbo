@@ -42,8 +42,7 @@ public class M_animal_type {
                 tabel.addRow(data);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-            e.getMessage();
+            System.out.println("Something was wrong. Error: " + e);
         }
         return tabel;
     }
