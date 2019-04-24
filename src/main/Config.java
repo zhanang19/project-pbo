@@ -14,23 +14,25 @@ import java.sql.SQLException;
  * @author ASUS
  */
 public class Config {
+
     Connection DBConnection;
-    
+
     public Config() {
-        
+
     }
-    
+
     public Connection createDBConnection() {
         if (DBConnection == null) {
-            String url = "jdbc:postgresql://ec2-23-23-92-204.compute-1.amazonaws.com:5432/";
             String database = "d9ek16mludg78a";
             String username = "ttmzwvmtinzjlp";
             String password = "03d8bbf4fe174f1f3eb76ed041fc241cf90e4d1d9b158f49169c8e4295042f41";
+            String url = "jdbc:postgresql://ec2-23-23-92-204.compute-1.amazonaws.com:5432/" + database + "?sslmode=require";
             try {
-                DBConnection = (Connection) DriverManager.getConnection(url+database, username, password);
+                DBConnection = (Connection) DriverManager.getConnection(url, username, password);
                 System.out.println("Connection Successful");
             } catch (SQLException e) {
-                System.out.println("Connection Failed");
+                System.out.println("Connection Failed. Error : " + e);
+                e.getMessage();
             }
         }
         return DBConnection;
