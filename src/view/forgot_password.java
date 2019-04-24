@@ -12,30 +12,29 @@ import java.awt.event.ActionListener;
  *
  * @author MaulanaKevinPradana
  */
-public class register extends javax.swing.JFrame {
+public class forgot_password extends javax.swing.JFrame {
 
     /**
-     * Creates new form daftar
+     * Creates new form lupa_password
      */
-    public register() {
+    public forgot_password() {
         initComponents();
         form.setBackground(new Color(0, 0, 0, 40));
     }
 
     // <editor-fold defaultstate="collapsed" desc="Action Listener">
-    public void daftarListener(ActionListener a) {
-        btnRegister.addActionListener(a);
+    public void sendListener(ActionListener a) {
+        btnSend.addActionListener(a);
     }
 
     public void exitListener(ActionListener a) {
         btnExit.addActionListener(a);
     }
-
+    
     public void backListener(ActionListener a) {
         btnBack.addActionListener(a);
     }
     //</editor-fold>
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,16 +46,12 @@ public class register extends javax.swing.JFrame {
 
         jPanel = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
+        form = new javax.swing.JPanel();
+        username = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        btnSend = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
-        form = new javax.swing.JPanel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        password = new javax.swing.JLabel();
-        email = new javax.swing.JLabel();
-        txtName1 = new javax.swing.JTextField();
-        txtName = new javax.swing.JTextField();
-        name = new javax.swing.JLabel();
-        btnRegister = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,9 +62,25 @@ public class register extends javax.swing.JFrame {
 
         title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
-        title.setText("gombing.id");
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/title.png"))); // NOI18N
         title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
+        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
+
+        form.setBackground(new java.awt.Color(102, 102, 102));
+        form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setText("E-Mail");
+        form.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        txtUsername.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        form.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 209, 27));
+
+        btnSend.setText("Send");
+        btnSend.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        form.add(btnSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 209, -1));
+
+        jPanel.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 250, 190));
 
         btnExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,41 +94,6 @@ public class register extends javax.swing.JFrame {
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_back_64px.png"))); // NOI18N
         btnBack.setContentAreaFilled(false);
         jPanel.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
-
-        form.setBackground(new java.awt.Color(153, 153, 153));
-        form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPasswordField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        form.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 210, -1));
-
-        password.setForeground(new java.awt.Color(255, 255, 255));
-        password.setText("Password");
-        password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        form.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-
-        email.setForeground(new java.awt.Color(255, 255, 255));
-        email.setText("E-Mail");
-        email.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        form.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
-
-        txtName1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtName1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        form.add(txtName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 210, -1));
-
-        txtName.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        form.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 210, -1));
-
-        name.setForeground(new java.awt.Color(255, 255, 255));
-        name.setText("Name");
-        name.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        form.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        btnRegister.setText("Regist Now");
-        btnRegister.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        form.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 265, -1));
-
-        jPanel.add(form, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 340, 170));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/bg-login.jpg"))); // NOI18N
         jPanel.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 320));
@@ -154,21 +130,23 @@ public class register extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(forgot_password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(forgot_password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(forgot_password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(forgot_password.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new register().setVisible(true);
+                new forgot_password().setVisible(true);
             }
         });
     }
@@ -177,15 +155,11 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnRegister;
-    private javax.swing.JLabel email;
+    private javax.swing.JButton btnSend;
     private javax.swing.JPanel form;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JLabel name;
-    private javax.swing.JLabel password;
     private javax.swing.JLabel title;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtName1;
+    private javax.swing.JTextField txtUsername;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

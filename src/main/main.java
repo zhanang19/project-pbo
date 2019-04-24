@@ -7,8 +7,8 @@ package main;
 
 import model.M_user;
 import view.login;
-import view.register;
-import view.forgotten_password;
+import view.registration;
+import view.forgot_password;
 import controller.users;
 /**
  *
@@ -21,7 +21,7 @@ public class main {
      */
     public static void main(String[] args) {
         users control;
-        control = new users(new login(), new register(), new forgotten_password(),new M_user());
+        control = new users(new login(), new registration(), new forgot_password(),new M_user());
     }
     
 }

@@ -139,9 +139,9 @@ public class profil_manager extends javax.swing.JFrame {
 
         title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
-        title.setText("gombing.id");
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/title.png"))); // NOI18N
         title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
+        jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, -1, -1));
 
         btnProfil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnProfil.setForeground(new java.awt.Color(255, 255, 255));

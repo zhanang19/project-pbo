@@ -145,9 +145,9 @@ public class calculator extends javax.swing.JFrame {
 
         title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
-        title.setText("gombing.id");
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/title.png"))); // NOI18N
         title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
+        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, -1, -1));
 
         calculator.setBackground(new java.awt.Color(153, 153, 153));
         calculator.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

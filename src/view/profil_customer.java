@@ -13,12 +13,12 @@ import javax.swing.JTextField;
  *
  * @author MaulanaKevinPradana
  */
-public class profil_user extends javax.swing.JFrame {
+public class profil_customer extends javax.swing.JFrame {
 
     /**
      * Creates new form profil_user
      */
-    public profil_user() {
+    public profil_customer() {
         initComponents();
         menu.setBackground(new Color(0, 0, 0, 40));
         form.setBackground(new Color(0, 0, 0, 40));
@@ -136,9 +136,9 @@ public class profil_user extends javax.swing.JFrame {
 
         title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
-        title.setText("gombing.id");
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/title.png"))); // NOI18N
         title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 10, -1, -1));
+        jPanel1.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, -1, -1));
 
         btnProfil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnProfil.setForeground(new java.awt.Color(255, 255, 255));
@@ -308,20 +308,21 @@ public class profil_user extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(profil_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(profil_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(profil_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(profil_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(profil_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(profil_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(profil_user.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(profil_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new profil_user().setVisible(true);
+                new profil_customer().setVisible(true);
             }
         });
     }

@@ -7,26 +7,26 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.profil_user;
-import view.animalCare_user;
+import view.profil_customer;
+import view.animalCare_customer;
 
 /**
  *
  * @author MaulanaKevinPradana
  */
-public class user {
+public class customer {
 
-    private final profil_user viewProfil;
-    private final animalCare_user viewAnimalCare;
+    private final profil_customer viewProfil;
+    private final animalCare_customer viewAnimalCare;
 
-    public user() {
-        viewProfil = new profil_user();
+    public customer() {
+        viewProfil = new profil_customer();
         viewProfil.profilListener(new profilListener());
         viewProfil.animalCareListener(new animalCareLisener());
         viewProfil.updateListener(new updateListener());
         viewProfil.logoutListener(new logout(viewProfil));
 
-        viewAnimalCare = new animalCare_user();
+        viewAnimalCare = new animalCare_customer();
         viewAnimalCare.setVisible(true);
         viewAnimalCare.profilListener(new profilListener());
         viewAnimalCare.animalCareListener(new animalCareLisener());

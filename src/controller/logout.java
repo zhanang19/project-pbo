@@ -10,10 +10,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.M_user;
-import view.register;
+import view.registration;
 import view.login;
-import view.forgotten_password;
-import view.recordingAnimal_admin;
+import view.forgot_password;
 
 /**
  *
@@ -33,7 +32,7 @@ import view.recordingAnimal_admin;
             if (pilihan == JOptionPane.YES_OPTION) {
                 login viewLogin = new login();
                 M_user model = new M_user();
-                users user = new users(new login(), new register(), new forgotten_password(),new M_user());
+                users user = new users(new login(), new registration(), new forgot_password(),new M_user());
                 view.dispose();
             } else {
                 //empty

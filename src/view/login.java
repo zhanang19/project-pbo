@@ -23,7 +23,7 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
         panelFormLogin.setBackground(new Color(0, 0, 0, 40));
-        panelDaftarLupaPass.setBackground(new Color(0, 0, 0, 40));
+        panelRegisterAndForgotPassword.setBackground(new Color(0, 0, 0, 40));
     }
 
     //<editor-fold defaultstate="collapsed" desc="ACTION LISTENER">
@@ -32,11 +32,11 @@ public class login extends javax.swing.JFrame {
     }
     
     public void daftarListener(MouseListener a){
-        txtDaftar.addMouseListener(a);
+        txtRegistration.addMouseListener(a);
     }
     
     public void lupaPasswordListener(MouseListener a){
-        txtLupaPassword.addMouseListener(a);
+        txtForgotPassword.addMouseListener(a);
     }
     
     public void exitListener(ActionListener a){
@@ -81,10 +81,10 @@ public class login extends javax.swing.JFrame {
         txtUsername = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
-        txtLupaPassword = new javax.swing.JLabel();
-        txtDaftar = new javax.swing.JLabel();
+        txtForgotPassword = new javax.swing.JLabel();
+        txtRegistration = new javax.swing.JLabel();
         panelFormLogin = new javax.swing.JPanel();
-        panelDaftarLupaPass = new javax.swing.JPanel();
+        panelRegisterAndForgotPassword = new javax.swing.JPanel();
         btnExit = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -97,9 +97,9 @@ public class login extends javax.swing.JFrame {
 
         title.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
-        title.setText("gombing.id");
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/title.png"))); // NOI18N
         title.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
+        jPanel.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, -1));
 
         username.setForeground(new java.awt.Color(255, 255, 255));
         username.setText("Username");
@@ -119,15 +119,15 @@ public class login extends javax.swing.JFrame {
         btnLogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 230, 209, -1));
 
-        txtLupaPassword.setForeground(new java.awt.Color(255, 255, 51));
-        txtLupaPassword.setText("Forgotten Password");
-        txtLupaPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel.add(txtLupaPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 285, -1, -1));
+        txtForgotPassword.setForeground(new java.awt.Color(255, 255, 51));
+        txtForgotPassword.setText("Forgot Password");
+        txtForgotPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel.add(txtForgotPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 285, -1, -1));
 
-        txtDaftar.setForeground(new java.awt.Color(255, 255, 51));
-        txtDaftar.setText("Create New Account");
-        txtDaftar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel.add(txtDaftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 285, -1, -1));
+        txtRegistration.setForeground(new java.awt.Color(255, 255, 51));
+        txtRegistration.setText("Create New Account");
+        txtRegistration.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel.add(txtRegistration, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 285, -1, -1));
 
         panelFormLogin.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -144,20 +144,20 @@ public class login extends javax.swing.JFrame {
 
         jPanel.add(panelFormLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 250, 200));
 
-        panelDaftarLupaPass.setBackground(new java.awt.Color(102, 102, 102));
+        panelRegisterAndForgotPassword.setBackground(new java.awt.Color(102, 102, 102));
 
-        javax.swing.GroupLayout panelDaftarLupaPassLayout = new javax.swing.GroupLayout(panelDaftarLupaPass);
-        panelDaftarLupaPass.setLayout(panelDaftarLupaPassLayout);
-        panelDaftarLupaPassLayout.setHorizontalGroup(
-            panelDaftarLupaPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelRegisterAndForgotPasswordLayout = new javax.swing.GroupLayout(panelRegisterAndForgotPassword);
+        panelRegisterAndForgotPassword.setLayout(panelRegisterAndForgotPasswordLayout);
+        panelRegisterAndForgotPasswordLayout.setHorizontalGroup(
+            panelRegisterAndForgotPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 250, Short.MAX_VALUE)
         );
-        panelDaftarLupaPassLayout.setVerticalGroup(
-            panelDaftarLupaPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelRegisterAndForgotPasswordLayout.setVerticalGroup(
+            panelRegisterAndForgotPasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 25, Short.MAX_VALUE)
         );
 
-        jPanel.add(panelDaftarLupaPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 250, 25));
+        jPanel.add(panelRegisterAndForgotPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 250, 25));
 
         btnExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnExit.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,13 +226,13 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogin;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JPanel panelDaftarLupaPass;
     private javax.swing.JPanel panelFormLogin;
+    private javax.swing.JPanel panelRegisterAndForgotPassword;
     private javax.swing.JLabel password;
     private javax.swing.JLabel title;
-    private javax.swing.JLabel txtDaftar;
-    private javax.swing.JLabel txtLupaPassword;
+    private javax.swing.JLabel txtForgotPassword;
     private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JLabel txtRegistration;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
