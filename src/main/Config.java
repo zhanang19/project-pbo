@@ -11,28 +11,29 @@ import java.sql.SQLException;
 
 /**
  *
- * @author ASUS
+ * @author zha
  */
 public class Config {
-    Connection DBConnection;
     
-    public Config() {
-        
-    }
+    protected Connection DBConnection = null;
     
-    public Connection createDBConnection() {
-        if (DBConnection == null) {
-            String url = "jdbc:postgres://ec2-23-23-92-204.compute-1.amazonaws.com:5432/";
+    protected Connection DBConnection() {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class not found. Error: " + e.getMessage());
+            System.exit(0);
+        }
+        try {
             String database = "d9ek16mludg78a";
             String username = "ttmzwvmtinzjlp";
             String password = "03d8bbf4fe174f1f3eb76ed041fc241cf90e4d1d9b158f49169c8e4295042f41";
-            try {
-                DBConnection = (Connection) DriverManager.getConnection(url+database, username, password);
-                System.out.println("Koneksi Berhasil");
-            } catch (SQLException e) {
-                System.out.println("Koneksi Gagal");
-            }
+            String url = "jdbc:postgresql://ec2-23-23-92-204.compute-1.amazonaws.com:5432/" + database + "?sslmode=require";
+            DBConnection = DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            System.out.println("Something was wrong on config. Error: " + e.getMessage());
         }
+
         return DBConnection;
     }
 }

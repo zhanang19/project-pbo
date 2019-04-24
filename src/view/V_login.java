@@ -5,6 +5,10 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author zha
@@ -16,6 +20,34 @@ public class V_login extends javax.swing.JFrame {
      */
     public V_login() {
         initComponents();
+    }
+
+    public JLabel getAlertMessage() {
+        return alertMessage;
+    }
+
+    public void setAlertMessage(String alertMessage) {
+        this.alertMessage.setText(alertMessage);
+    }
+
+    public JTextField getTf_email() {
+        return tf_email;
+    }
+
+    public void setTf_email(JTextField tf_email) {
+        this.tf_email = tf_email;
+    }
+
+    public JTextField getTf_password() {
+        return tf_password;
+    }
+
+    public void setTf_password(JTextField tf_password) {
+        this.tf_password = tf_password;
+    }
+    
+    public void ClickLogin(ActionListener action) {
+        btn_login.addActionListener(action);
     }
 
     /**
@@ -30,6 +62,7 @@ public class V_login extends javax.swing.JFrame {
         tf_email = new javax.swing.JTextField();
         tf_password = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
+        alertMessage = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,6 +72,7 @@ public class V_login extends javax.swing.JFrame {
 
         btn_login.setText("login");
         getContentPane().add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+        getContentPane().add(alertMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 180, 20));
         getContentPane().add(bg, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 0, 326, 300));
 
         pack();
@@ -81,6 +115,7 @@ public class V_login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel alertMessage;
     private javax.swing.JLabel bg;
     private javax.swing.JButton btn_login;
     private javax.swing.JTextField tf_email;

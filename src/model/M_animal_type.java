@@ -5,25 +5,30 @@
  */
 package model;
 import java.sql.Connection;
-import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.table.DefaultTableModel;
+import java.sql.Statement;
 import main.Config;
 
 /**
  *
  * @author zha
  */
-public class M_animal_type {
+public class M_animal_type extends Config {
 
-    private Connection DBConnection;
-    private String tableName = "animal_type";
+    String tableName = "animal_type";
+    Connection DBConnection;
+    Statement statement;
+    ResultSet resultSet;
     
     public M_animal_type() {
-        // get and set connection to local variable
-        DBConnection = new Config().createDBConnection();
+        try {
+            DBConnection = DBConnection();
+            statement = DBConnection.createStatement();
+        } catch (Exception e) {
+            System.out.println("Something was wrong: Error: " + e.getMessage());
+        }
     }
     
     public boolean createAnimalType(String animal_type) {
@@ -43,8 +48,6 @@ public class M_animal_type {
         }
         return false;
     }
-    
-    public 
     
     public String getTableName() {
         return tableName;
