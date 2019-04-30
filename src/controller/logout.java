@@ -9,10 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import model.M_user;
-import view.registration;
-import view.login;
-import view.forgot_password;
+import model.m_user;
+import view.v_registration;
+import view.v_login;
+import view.v_forgot_password;
 
 /**
  *
@@ -30,9 +30,9 @@ import view.forgot_password;
         public void actionPerformed(ActionEvent e) {
             int pilihan = JOptionPane.showConfirmDialog(view, "Are you sure to logout?", "Logout", JOptionPane.YES_NO_OPTION);
             if (pilihan == JOptionPane.YES_OPTION) {
-                login viewLogin = new login();
-                M_user model = new M_user();
-                users user = new users(new login(), new registration(), new forgot_password(),new M_user());
+                v_login viewLogin = new v_login();
+                m_user model = new m_user();
+                users user = new users(new v_login(), new v_registration(), new v_forgot_password(),new m_user());
                 view.dispose();
             } else {
                 //empty

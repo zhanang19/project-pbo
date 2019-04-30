@@ -10,13 +10,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
-import view.account_admin;
-import view.recordingAnimal_admin;
-import view.animal_type;
-import model.M_recording_animal;
-import model.M_user;
-import model.M_animal_type;
-import model.M_type_pet;
+import view.v_account_admin;
+import view.v_recordingAnimal_admin;
+import view.v_animal_type;
+import model.m_recording_animal;
+import model.m_user;
+import model.m_animal_type;
+import model.m_type_pet;
 
 /**
  *
@@ -24,19 +24,19 @@ import model.M_type_pet;
  */
 public class admin {
 
-    private final recordingAnimal_admin viewRecordingAnimal;
-    private final M_recording_animal modelAnimal;
-    private final M_user modelUsers;
-    private final account_admin viewAccount;
-    private final animal_type viewAnimalType;
-    private final M_animal_type modelAnimalType;
-    private final M_type_pet modelTypePet;
+    private final v_recordingAnimal_admin viewRecordingAnimal;
+    private final m_recording_animal modelAnimal;
+    private final m_user modelUsers;
+    private final v_account_admin viewAccount;
+    private final v_animal_type viewAnimalType;
+    private final m_animal_type modelAnimalType;
+    private final m_type_pet modelTypePet;
 
     private int idTypePet;
     private int idAnimalType;
 
     public admin() {
-        viewRecordingAnimal = new recordingAnimal_admin();
+        viewRecordingAnimal = new v_recordingAnimal_admin();
         viewRecordingAnimal.setVisible(true);
         viewRecordingAnimal.rAnimalListener(new rAnimalListener());
         viewRecordingAnimal.accountListener(new accountListener());
@@ -47,7 +47,7 @@ public class admin {
         viewRecordingAnimal.updateListener(new updateRecordListener());
         viewRecordingAnimal.refreshListener(new refreshRecordListener());
 
-        viewAccount = new account_admin();
+        viewAccount = new v_account_admin();
         viewAccount.rAnimalListener(new rAnimalListener());
         viewAccount.accountListener(new accountListener());
         viewAccount.tAnimalListener(new tAnimalListener());
@@ -57,7 +57,7 @@ public class admin {
         viewAccount.updateListener(new updateAccountListener());
         viewAccount.refreshListener(new refreshAccountListener());
 
-        viewAnimalType = new animal_type();
+        viewAnimalType = new v_animal_type();
         viewAnimalType.rAnimalListener(new rAnimalListener());
         viewAnimalType.accountListener(new accountListener());
         viewAnimalType.tAnimalListener(new tAnimalListener());
@@ -73,14 +73,14 @@ public class admin {
         viewAnimalType.updateAnimalTypeListener(new updateAnimalTypeListener());
         viewAnimalType.refreshAnimalTypeListener(new refreshAnimalTypeListener());
 
-        modelAnimal = new M_recording_animal();
+        modelAnimal = new m_recording_animal();
         readTableRecordingAnimal();
 
-        modelUsers = new M_user();
+        modelUsers = new m_user();
 
-        modelAnimalType = new M_animal_type();
+        modelAnimalType = new m_animal_type();
 
-        modelTypePet = new M_type_pet();
+        modelTypePet = new m_type_pet();
 
     }
 

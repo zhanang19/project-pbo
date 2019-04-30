@@ -14,17 +14,17 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author MaulanaKevinPradana
  */
-public class recordingAnimal_manager extends javax.swing.JFrame {
+public class v_animalCare_manager extends javax.swing.JFrame {
 
     /**
-     * Creates new form recordingAnimal_manager
+     * Creates new form animalCare_manager
      */
-    public recordingAnimal_manager() {
+    public v_animalCare_manager() {
         initComponents();
-        menu.setBackground(new Color(0, 0, 0, 40));        
+        menu.setBackground(new Color(0, 0, 0, 40));
     }
 
-    //<editor-fold defaultstate="collapse" desc="ACTION LISTENER">
+    // <editor-fold defaultstate="collapsed" desc="Action Listener">
     public void profilListener(ActionListener a) {
         btnProfil.addActionListener(a);
     }
@@ -41,7 +41,7 @@ public class recordingAnimal_manager extends javax.swing.JFrame {
         btnLogout.addActionListener(a);
     }
     //</editor-fold>
-    
+
     //<editor-fold defaultstate="collapse" desc="Tabel">
     public void setTabel(DefaultTableModel t) {
         tabelRecord.setModel(t);
@@ -101,6 +101,7 @@ public class recordingAnimal_manager extends javax.swing.JFrame {
         btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
         btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
         btnRAnimal.setText("Recording Animal");
+        btnRAnimal.setContentAreaFilled(false);
         btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnRAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 155, 80));
@@ -109,7 +110,6 @@ public class recordingAnimal_manager extends javax.swing.JFrame {
         btnAnimalCare.setForeground(new java.awt.Color(255, 255, 255));
         btnAnimalCare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
         btnAnimalCare.setText("Animal Care");
-        btnAnimalCare.setContentAreaFilled(false);
         btnAnimalCare.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAnimalCare.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnAnimalCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
@@ -128,15 +128,15 @@ public class recordingAnimal_manager extends javax.swing.JFrame {
 
         tabelRecord.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Animal Name", "Animal Type", "Gender", "Birthdate", "User", "Skin Color", "Ear Type", "Type Pet", "Updated at", "Created at"
+                "Id", "Animal Name", "User", "Weight", "Body Length", "height", "Comment", "Timestap"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -198,20 +198,21 @@ public class recordingAnimal_manager extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(recordingAnimal_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new recordingAnimal_manager().setVisible(true);
+                new v_animalCare_manager().setVisible(true);
             }
         });
     }

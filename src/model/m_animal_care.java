@@ -10,18 +10,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import main.Config;
+import main.config;
 
 /**
  *
  * @author User
  */
-public class M_animal_care {
+public class m_animal_care {
 
     private final Connection DBConnection;
 
-    public M_animal_care() {
-        DBConnection = new Config().createDBConnection();
+    public m_animal_care() {
+        DBConnection = new config().createDBConnection();
     }
 
     public DefaultTableModel readTable_animalCare() {

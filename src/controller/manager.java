@@ -8,11 +8,11 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import view.profil_manager;
-import view.animalCare_manager;
-import view.recordingAnimal_manager;
-import model.M_recording_animal;
-import model.M_animal_care;
+import view.v_profil_manager;
+import view.v_animalCare_manager;
+import view.v_recordingAnimal_manager;
+import model.m_recording_animal;
+import model.m_animal_care;
 
 /**
  *
@@ -20,37 +20,37 @@ import model.M_animal_care;
  */
 public class manager {
 
-    private final profil_manager viewProfil;
-    private final animalCare_manager viewAnimalCare;
-    private final recordingAnimal_manager viewRecordingAnimal;
-    private final M_recording_animal modelAnimal;
-    private final M_animal_care modelAnimalCare;
+    private final v_profil_manager viewProfil;
+    private final v_animalCare_manager viewAnimalCare;
+    private final v_recordingAnimal_manager viewRecordingAnimal;
+    private final m_recording_animal modelAnimal;
+    private final m_animal_care modelAnimalCare;
 
     public manager() {
-        viewProfil = new profil_manager();
+        viewProfil = new v_profil_manager();
         viewProfil.profilListener(new profilListener());
         viewProfil.rAnimalListener(new rAnimalListener());
         viewProfil.animalCareListener(new animalCareLisener());
         viewProfil.updateListener(new updateListener());
         viewProfil.logoutListener(new logout(viewProfil));
 
-        viewAnimalCare = new animalCare_manager();
+        viewAnimalCare = new v_animalCare_manager();
         viewAnimalCare.setVisible(true);
         viewAnimalCare.profilListener(new profilListener());
         viewAnimalCare.rAnimalListener(new rAnimalListener());
         viewAnimalCare.animalCareListener(new animalCareLisener());
         viewAnimalCare.logoutListener(new logout(viewAnimalCare));
 
-        viewRecordingAnimal = new recordingAnimal_manager();
+        viewRecordingAnimal = new v_recordingAnimal_manager();
         viewRecordingAnimal.profilListener(new profilListener());
         viewRecordingAnimal.rAnimalListener(new rAnimalListener());
         viewRecordingAnimal.animalCareListener(new animalCareLisener());
         viewRecordingAnimal.logoutListener(new logout(viewRecordingAnimal));
 
-        modelAnimal = new M_recording_animal();
+        modelAnimal = new m_recording_animal();
         readTableRecordingAnimal();        
         
-        modelAnimalCare = new M_animal_care();
+        modelAnimalCare = new m_animal_care();
         readTablAnimalCare();
     }
     

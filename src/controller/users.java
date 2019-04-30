@@ -10,10 +10,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
-import model.M_user;
-import view.login;
-import view.registration;
-import view.forgot_password;
+import model.m_user;
+import view.v_login;
+import view.v_registration;
+import view.v_forgot_password;
 
 /**
  *
@@ -21,16 +21,16 @@ import view.forgot_password;
  */
 public class users {
 
-    private M_user model;
-    private login viewLogin;
-    private registration viewDaftar;
-    private forgot_password viewLupaPassword;
+    private m_user model;
+    private v_login viewLogin;
+    private v_registration viewDaftar;
+    private v_forgot_password viewLupaPassword;
 
     public users() {
         //konstruktor kosong
     }
 
-    public users(login viewLogin, registration viewDaftar, forgot_password viewLupaPassword, M_user model) {
+    public users(v_login viewLogin, v_registration viewDaftar, v_forgot_password viewLupaPassword, m_user model) {
         this.model = model;
 
         this.viewLogin = viewLogin;
@@ -83,7 +83,6 @@ public class users {
                     break;
             }
         }
-
     }
     //</editor-fold>
 

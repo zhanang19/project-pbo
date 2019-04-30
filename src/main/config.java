@@ -13,11 +13,11 @@ import java.sql.SQLException;
  *
  * @author ASUS
  */
-public class Config {
+public class config {
 
     Connection DBConnection;
 
-    public Config() {
+    public config() {
 
     }
 

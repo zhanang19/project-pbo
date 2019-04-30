@@ -10,19 +10,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import main.Config;
+import main.config;
 
 /**
  *
  * @author ASUS
  */
-public class M_type_pet {
+public class m_type_pet {
 
     private Connection DBConnection;
 
-    public M_type_pet() {
+    public m_type_pet() {
         // get and set connection to local variable
-        DBConnection = new Config().createDBConnection();
+        DBConnection = new config().createDBConnection();
     }
 
     public DefaultTableModel readTable_typePet() {

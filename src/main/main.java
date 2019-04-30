@@ -5,10 +5,10 @@
  */
 package main;
 
-import model.M_user;
-import view.login;
-import view.registration;
-import view.forgot_password;
+import model.m_user;
+import view.v_login;
+import view.v_registration;
+import view.v_forgot_password;
 import controller.users;
 /**
  *
@@ -21,7 +21,7 @@ public class main {
      */
     public static void main(String[] args) {
         users control;
-        control = new users(new login(), new registration(), new forgot_password(),new M_user());
+        control = new users(new v_login(), new v_registration(), new v_forgot_password(),new m_user());
     }
     
 }

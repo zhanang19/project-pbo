@@ -7,8 +7,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import view.profil_customer;
-import view.animalCare_customer;
+import view.v_profil_customer;
+import view.v_animalCare_customer;
 
 /**
  *
@@ -16,17 +16,17 @@ import view.animalCare_customer;
  */
 public class customer {
 
-    private final profil_customer viewProfil;
-    private final animalCare_customer viewAnimalCare;
+    private final v_profil_customer viewProfil;
+    private final v_animalCare_customer viewAnimalCare;
 
     public customer() {
-        viewProfil = new profil_customer();
+        viewProfil = new v_profil_customer();
         viewProfil.profilListener(new profilListener());
         viewProfil.animalCareListener(new animalCareLisener());
         viewProfil.updateListener(new updateListener());
         viewProfil.logoutListener(new logout(viewProfil));
 
-        viewAnimalCare = new animalCare_customer();
+        viewAnimalCare = new v_animalCare_customer();
         viewAnimalCare.setVisible(true);
         viewAnimalCare.profilListener(new profilListener());
         viewAnimalCare.animalCareListener(new animalCareLisener());

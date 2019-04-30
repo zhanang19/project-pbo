@@ -10,19 +10,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import main.Config;
+import main.config;
 
 /**
  *
  * @author zha
  */
-public class M_animal_type {
+public class m_animal_type {
 
     private final Connection DBConnection;
 
-    public M_animal_type() {
+    public m_animal_type() {
         // get and set connection to local variable
-        DBConnection = new Config().createDBConnection();
+        DBConnection = new config().createDBConnection();
     }
     
     public String[] dataCMB(){

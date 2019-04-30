@@ -14,12 +14,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author MaulanaKevinPradana
  */
-public class account_admin extends javax.swing.JFrame {
+public class v_account_admin extends javax.swing.JFrame {
 
     /**
      * Creates new form accountAdmin
      */
-    public account_admin() {
+    public v_account_admin() {
         initComponents();
         menu.setBackground(new Color(0, 0, 0, 40));
         button.setBackground(new Color(0, 0, 0, 40));
@@ -332,21 +332,23 @@ public class account_admin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_account_admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new account_admin().setVisible(true);
+                new v_account_admin().setVisible(true);
             }
         });
     }

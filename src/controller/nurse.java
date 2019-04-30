@@ -8,12 +8,12 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import view.profil_nurse;
-import view.recordingAnimal_nurse;
-import view.animalCare_nurse;
-import model.M_animal_care;
-import model.M_recording_animal;
-import view.calculator;
+import view.v_profil_nurse;
+import view.v_recordingAnimal_nurse;
+import view.v_animalCare_nurse;
+import model.m_animal_care;
+import model.m_recording_animal;
+import view.v_calculator;
 
 /**
  *
@@ -21,15 +21,15 @@ import view.calculator;
  */
 public class nurse {
 
-    private final profil_nurse viewProfil;
-    private final animalCare_nurse viewAnimalCare;
-    private final recordingAnimal_nurse viewRecordingAnimal;
-    private final calculator viewCalculator;
-    private final M_recording_animal modelAnimal;
-    private final M_animal_care modelAnimalCare;
+    private final v_profil_nurse viewProfil;
+    private final v_animalCare_nurse viewAnimalCare;
+    private final v_recordingAnimal_nurse viewRecordingAnimal;
+    private final v_calculator viewCalculator;
+    private final m_recording_animal modelAnimal;
+    private final m_animal_care modelAnimalCare;
 
     public nurse() {
-        viewProfil = new profil_nurse();
+        viewProfil = new v_profil_nurse();
         viewProfil.profilListener(new profilListener());
         viewProfil.rAnimalListener(new rAnimalListener());
         viewProfil.animalCareListener(new animalCareListener());
@@ -37,7 +37,7 @@ public class nurse {
         viewProfil.updateListener(new updateListener());
         viewProfil.logoutListener(new logout(viewProfil));
 
-        viewAnimalCare = new animalCare_nurse();
+        viewAnimalCare = new v_animalCare_nurse();
         viewAnimalCare.setVisible(true);
         viewAnimalCare.profilListener(new profilListener());
         viewAnimalCare.rAnimalListener(new rAnimalListener());
@@ -45,7 +45,7 @@ public class nurse {
         viewAnimalCare.calculatorListener(new calculatorListener());
         viewAnimalCare.logoutListener(new logout(viewAnimalCare));
 
-        viewRecordingAnimal = new recordingAnimal_nurse();
+        viewRecordingAnimal = new v_recordingAnimal_nurse();
         viewRecordingAnimal.profilListener(new profilListener());
         viewRecordingAnimal.rAnimalListener(new rAnimalListener());
         viewRecordingAnimal.animalCareListener(new animalCareListener());
@@ -57,7 +57,7 @@ public class nurse {
         viewRecordingAnimal.refreshListener(new refreshRecordListener());
         
         
-        viewCalculator = new calculator();
+        viewCalculator = new v_calculator();
         viewCalculator.rAnimalListener(new rAnimalListener());
         viewCalculator.profilListener(new profilListener());
         viewCalculator.animalCareListener(new animalCareListener());
@@ -65,10 +65,10 @@ public class nurse {
         viewCalculator.logoutListener(new logout(viewCalculator));
         viewCalculator.countListener(new countListener());
 
-        modelAnimal = new M_recording_animal();
+        modelAnimal = new m_recording_animal();
         readTableRecordingAnimal();
         
-        modelAnimalCare = new M_animal_care();
+        modelAnimalCare = new m_animal_care();
         readTablAnimalCare();
     }
 

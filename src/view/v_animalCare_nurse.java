@@ -17,12 +17,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author MaulanaKevinPradana
  */
-public class animalCare_nurse extends javax.swing.JFrame {
+public class v_animalCare_nurse extends javax.swing.JFrame {
 
     /**
      * Creates new form animalCare_nurse
      */
-    public animalCare_nurse() {
+    public v_animalCare_nurse() {
         initComponents();
         menu.setBackground(new Color(0, 0, 0, 40));
         button.setBackground(new Color(0, 0, 0, 40));
@@ -420,21 +420,23 @@ public class animalCare_nurse extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new animalCare_nurse().setVisible(true);
+                new v_animalCare_nurse().setVisible(true);
             }
         });
     }

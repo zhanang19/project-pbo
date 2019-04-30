@@ -9,19 +9,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import main.Config;
+import main.config;
 
 /**
  *
  * @author zha
  */
-public class M_user {
+public class m_user {
 
     private final Connection DBConnection;
     
-    public M_user() {
+    public m_user() {
         // get and set connection to local variable
-        DBConnection = new Config().createDBConnection();
+        DBConnection = new config().createDBConnection();
     }
     
     public DefaultTableModel readTableUsers() {

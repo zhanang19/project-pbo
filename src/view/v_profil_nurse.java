@@ -12,12 +12,12 @@ import java.awt.event.ActionListener;
  *
  * @author MaulanaKevinPradana
  */
-public class profil_nurse extends javax.swing.JFrame {
+public class v_profil_nurse extends javax.swing.JFrame {
 
     /**
      * Creates new form profil_nurse
      */
-    public profil_nurse() {
+    public v_profil_nurse() {
         initComponents();
         menu.setBackground(new Color(0, 0, 0, 40));
         form.setBackground(new Color(0, 0, 0, 40));
@@ -334,21 +334,23 @@ public class profil_nurse extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_profil_nurse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new profil_nurse().setVisible(true);
+                new v_profil_nurse().setVisible(true);
             }
         });
     }

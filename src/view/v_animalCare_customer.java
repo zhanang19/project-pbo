@@ -7,30 +7,24 @@ package view;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author MaulanaKevinPradana
  */
-public class animalCare_manager extends javax.swing.JFrame {
+public class v_animalCare_customer extends javax.swing.JFrame {
 
     /**
-     * Creates new form animalCare_manager
+     * Creates new form recordingAnimal_pelanggan
      */
-    public animalCare_manager() {
+    public v_animalCare_customer() {
         initComponents();
         menu.setBackground(new Color(0, 0, 0, 40));
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="Action Listener">
     public void profilListener(ActionListener a) {
         btnProfil.addActionListener(a);
-    }
-
-    public void rAnimalListener(ActionListener a) {
-        btnRAnimal.addActionListener(a);
     }
 
     public void animalCareListener(ActionListener a) {
@@ -41,22 +35,6 @@ public class animalCare_manager extends javax.swing.JFrame {
         btnLogout.addActionListener(a);
     }
     //</editor-fold>
-
-    //<editor-fold defaultstate="collapse" desc="Tabel">
-    public void setTabel(DefaultTableModel t) {
-        tabelRecord.setModel(t);
-    }
-
-    public void tabelListener(MouseListener m) {
-        tabelRecord.addMouseListener(m);
-    }
-
-    public int getBarisTerpilih() {
-        return tabelRecord.getSelectedRow();
-    }
-
-    //</editor-fold>
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -69,12 +47,11 @@ public class animalCare_manager extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         title = new javax.swing.JLabel();
         btnProfil = new javax.swing.JButton();
-        btnRAnimal = new javax.swing.JButton();
         btnAnimalCare = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        menu = new javax.swing.JPanel();
         scroll = new javax.swing.JScrollPane();
         tabelRecord = new javax.swing.JTable();
-        menu = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,29 +67,20 @@ public class animalCare_manager extends javax.swing.JFrame {
 
         btnProfil.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnProfil.setForeground(new java.awt.Color(255, 255, 255));
-        btnProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_manager_48px.png"))); // NOI18N
+        btnProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_person_male_30px.png"))); // NOI18N
         btnProfil.setText("Profil");
         btnProfil.setContentAreaFilled(false);
         btnProfil.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnProfil.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 80));
 
-        btnRAnimal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnRAnimal.setForeground(new java.awt.Color(255, 255, 255));
-        btnRAnimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
-        btnRAnimal.setText("Recording Animal");
-        btnRAnimal.setContentAreaFilled(false);
-        btnRAnimal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnRAnimal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnRAnimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 155, 80));
-
         btnAnimalCare.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAnimalCare.setForeground(new java.awt.Color(255, 255, 255));
-        btnAnimalCare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px_1.png"))); // NOI18N
+        btnAnimalCare.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/assets/icons8_Pet_Commands_Summon_50px.png"))); // NOI18N
         btnAnimalCare.setText("Animal Care");
         btnAnimalCare.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAnimalCare.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(btnAnimalCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 155, 80));
+        jPanel1.add(btnAnimalCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 155, 80));
 
         btnLogout.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,30 +91,6 @@ public class animalCare_manager extends javax.swing.JFrame {
         btnLogout.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnLogout.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 155, 60));
-
-        scroll.setAutoscrolls(true);
-
-        tabelRecord.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Id", "Animal Name", "User", "Weight", "Body Length", "height", "Comment", "Timestap"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        tabelRecord.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        scroll.setViewportView(tabelRecord);
-
-        jPanel1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 970, 380));
 
         menu.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -162,6 +106,30 @@ public class animalCare_manager extends javax.swing.JFrame {
         );
 
         jPanel1.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 155, 380));
+
+        scroll.setAutoscrolls(true);
+
+        tabelRecord.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Animal Name", "Weight", "Body Length", "height", "Comment", "Timestap"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabelRecord.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        scroll.setViewportView(tabelRecord);
+
+        jPanel1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 970, 380));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/assets/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 660));
@@ -198,20 +166,35 @@ public class animalCare_manager extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(animalCare_manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(v_animalCare_customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new animalCare_manager().setVisible(true);
+                new v_animalCare_customer().setVisible(true);
             }
         });
     }
@@ -221,7 +204,6 @@ public class animalCare_manager extends javax.swing.JFrame {
     private javax.swing.JButton btnAnimalCare;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnProfil;
-    private javax.swing.JButton btnRAnimal;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menu;
     private javax.swing.JScrollPane scroll;
