@@ -122,15 +122,19 @@ public class animalCare_nurse extends javax.swing.JFrame {
     
     //<editor-fold defaultstate="collapse" desc="Tabel">
     public void setTabel(DefaultTableModel t) {
-        tabelRecord.setModel(t);
+        tabelAnimalCare.setModel(t);
     }
 
     public void tabelListener(MouseListener m) {
-        tabelRecord.addMouseListener(m);
+        tabelAnimalCare.addMouseListener(m);
     }
-
-    public int getBarisTerpilih() {
-        return tabelRecord.getSelectedRow();
+    
+    public int getSelectedRowAnimalCare() {
+        return tabelAnimalCare.getSelectedRow();
+    }    
+    
+    public int getIdAnimalCare(int row) {
+        return Integer.parseInt(tabelAnimalCare.getValueAt(row, 0).toString());
     }
 
     //</editor-fold>
@@ -156,7 +160,7 @@ public class animalCare_nurse extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         scroll = new javax.swing.JScrollPane();
-        tabelRecord = new javax.swing.JTable();
+        tabelAnimalCare = new javax.swing.JTable();
         button = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
         animalName = new javax.swing.JLabel();
@@ -260,7 +264,7 @@ public class animalCare_nurse extends javax.swing.JFrame {
 
         scroll.setAutoscrolls(true);
 
-        tabelRecord.setModel(new javax.swing.table.DefaultTableModel(
+        tabelAnimalCare.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null}
@@ -277,8 +281,8 @@ public class animalCare_nurse extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tabelRecord.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        scroll.setViewportView(tabelRecord);
+        tabelAnimalCare.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        scroll.setViewportView(tabelAnimalCare);
 
         jPanel1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 970, 380));
 
@@ -458,7 +462,7 @@ public class animalCare_nurse extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menu;
     private javax.swing.JScrollPane scroll;
-    private javax.swing.JTable tabelRecord;
+    private javax.swing.JTable tabelAnimalCare;
     private javax.swing.JLabel title;
     private javax.swing.JTextField txtBodyLength;
     private javax.swing.JTextField txtComment;

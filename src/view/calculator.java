@@ -125,10 +125,10 @@ public class calculator extends javax.swing.JFrame {
         cm2 = new javax.swing.JLabel();
         btnCount = new javax.swing.JButton();
         message = new javax.swing.JLabel();
-        result = new javax.swing.JPanel();
         txtTitleResult = new javax.swing.JLabel();
         txtWeight = new javax.swing.JLabel();
         txtPrice = new javax.swing.JLabel();
+        result = new javax.swing.JPanel();
         btnProfil = new javax.swing.JButton();
         btnRAnimal = new javax.swing.JButton();
         btnAnimalCare = new javax.swing.JButton();
@@ -196,45 +196,30 @@ public class calculator extends javax.swing.JFrame {
         message.setForeground(new java.awt.Color(204, 0, 0));
         jPanel.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, 230, 20));
 
-        result.setBackground(new java.awt.Color(153, 153, 153));
-
         txtTitleResult.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtTitleResult.setForeground(new java.awt.Color(255, 255, 255));
         txtTitleResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel.add(txtTitleResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 410, 28));
 
+        txtWeight.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtWeight.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel.add(txtWeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 200, 29));
 
+        txtPrice.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtPrice.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 200, 29));
+
+        result.setBackground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout resultLayout = new javax.swing.GroupLayout(result);
         result.setLayout(resultLayout);
         resultLayout.setHorizontalGroup(
             resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 460, Short.MAX_VALUE)
-            .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(resultLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtTitleResult, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(resultLayout.createSequentialGroup()
-                            .addGap(105, 105, 105)
-                            .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         resultLayout.setVerticalGroup(
             resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 150, Short.MAX_VALUE)
-            .addGroup(resultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(resultLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(txtTitleResult, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(12, 12, 12)
-                    .addComponent(txtWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(11, 11, 11)
-                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jPanel.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 460, 150));

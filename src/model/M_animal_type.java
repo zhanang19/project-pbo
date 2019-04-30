@@ -6,7 +6,6 @@
 package model;
 
 import java.sql.Connection;
-import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,15 +18,37 @@ import main.Config;
  */
 public class M_animal_type {
 
-    private Connection DBConnection;
+    private final Connection DBConnection;
 
     public M_animal_type() {
         // get and set connection to local variable
         DBConnection = new Config().createDBConnection();
     }
     
+    public String[] dataCMB(){
+        String data[] = null;
+        String query = "SELECT animal_type FROM public.animal_type order by id;";
+        
+        try {
+            PreparedStatement st = DBConnection.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            rs.last();
+            int lastIndex = rs.getRow();
+            rs.beforeFirst();
+            data = new String[lastIndex];
+            int i = 0;
+            while (rs.next()) {
+                data[i] = rs.getString("Name");
+                i++;
+            }
+        } catch (SQLException e) {
+            System.out.println("Something was wrong. Error: " + e);
+        }
+        return data;
+    }
+    
     public DefaultTableModel readTable_animalType() {
-        String query = "SELECT id, animal_type FROM public.animal_type;";
+        String query = "SELECT id, animal_type FROM public.animal_type order by id;";
         String namaKolom[] = {"Id", "Tipe Hewan"};
         DefaultTableModel tabel = new DefaultTableModel(null, namaKolom);
         try {
@@ -47,19 +68,37 @@ public class M_animal_type {
         return tabel;
     }
     
-    public boolean createAnimalType(String animal_type) {
+    public boolean create_AnimalType(String animal_type) {
 
-        String query = "INSERT INTO public.animal_type (id, animal_type) VALUES (?, ?);";
+        String query = "INSERT INTO public.animal_type (animal_type) VALUES (?);";
+        boolean hasil = false;
         try {
             PreparedStatement st = DBConnection.prepareStatement(query);
             st.setString(1, animal_type);
-
-            if (st.executeUpdate() > 0) {
-                return true;
+            int insert = st.executeUpdate();
+            if (insert > 0) {
+                hasil = true;
             }
         } catch (SQLException e) {
             System.out.println("Something was wrong. Error: " + e);
         }
-        return false;
+        return hasil;
     }
+    public boolean update_AnimalType(String animal_type,int id) {
+        String query = "UPDATE public.animal_type SET animal_type=? WHERE id=?";
+        boolean hasil = false;
+        try {
+            PreparedStatement st = DBConnection.prepareStatement(query);
+            st.setString(1, animal_type);
+            st.setInt(2, id);
+            int insert = st.executeUpdate();
+            if (insert > 0) {
+                hasil = true;
+            }
+        } catch (SQLException e) {            
+            System.out.println("Something was wrong. Error: " + e);
+        }
+        return hasil;
+    }
+
 }

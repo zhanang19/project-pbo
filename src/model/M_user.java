@@ -88,6 +88,5 @@ public class M_user {
             System.out.println("Something was wrong. Error: " + e);
         }
         return tingkatan;
-    }   
-    
+    }       
 }

@@ -26,7 +26,7 @@ public class M_type_pet {
     }
 
     public DefaultTableModel readTable_typePet() {
-        String query = "SELECT id, type_pet FROM public.type_pet;";
+        String query = "SELECT id, type_pet FROM public.type_pet order by id;";
         String namaKolom[] = {"Id", "Tipe Gen"};
         DefaultTableModel tabel = new DefaultTableModel(null, namaKolom);
         try {
@@ -46,19 +46,37 @@ public class M_type_pet {
         return tabel;
     }
     
-    public boolean createAnimalType(String type_pet) {
+    public boolean create_TypePet(String type_pet) {
 
-        String query = "INSERT INTO public.animal_type (id, animal_type) VALUES (?, ?);";
+        String query = "INSERT INTO public.type_pet (type_pet) VALUES (?);";
+        boolean hasil = false;
         try {
             PreparedStatement st = DBConnection.prepareStatement(query);
-            st.setString(1, type_pet);
-
-            if (st.executeUpdate() > 0) {
-                return true;
+            st.setString(1,type_pet);
+            int insert = st.executeUpdate();
+            if (insert > 0) {
+                hasil = true;
             }
         } catch (SQLException e) {
             System.out.println("Something was wrong. Error: " + e);
         }
-        return false;
+        return hasil;
+    }
+    
+    public boolean update_TypePet(String type_pet,int id) {
+        String query = "UPDATE public.type_pet SET type_pet=? WHERE id=?";
+        boolean hasil = false;
+        try {
+            PreparedStatement st = DBConnection.prepareStatement(query);
+            st.setString(1, type_pet);
+            st.setInt(2, id);
+            int insert = st.executeUpdate();
+            if (insert > 0) {
+                hasil = true;
+            }
+        } catch (SQLException e) {            
+            System.out.println("Something was wrong. Error: " + e);
+        }
+        return hasil;
     }
 }

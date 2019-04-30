@@ -7,6 +7,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import view.account_admin;
 import view.recordingAnimal_admin;
@@ -29,6 +31,9 @@ public class admin {
     private final animal_type viewAnimalType;
     private final M_animal_type modelAnimalType;
     private final M_type_pet modelTypePet;
+
+    private int idTypePet;
+    private int idAnimalType;
 
     public admin() {
         viewRecordingAnimal = new recordingAnimal_admin();
@@ -57,10 +62,12 @@ public class admin {
         viewAnimalType.accountListener(new accountListener());
         viewAnimalType.tAnimalListener(new tAnimalListener());
         viewAnimalType.logoutListener(new logout(viewAnimalType));
+        viewAnimalType.tabelTypePetListener(new tabelTypePetListener());
         viewAnimalType.addTypePetListener(new addTypePetListener());
         viewAnimalType.deleteTypePetListener(new deleteTypePetListener());
         viewAnimalType.updateTypePetListener(new updateTypePetListener());
         viewAnimalType.refreshTypePetListener(new refreshTypePetListener());
+        viewAnimalType.tabelAnimalTypeListener(new tabelAnimalTypeListener());
         viewAnimalType.addAnimalTypeListener(new addAnimalTypeListener());
         viewAnimalType.deleteAnimalTypeListener(new deleteAnimalTypeListener());
         viewAnimalType.updateAnimalTypeListener(new updateAnimalTypeListener());
@@ -70,14 +77,11 @@ public class admin {
         readTableRecordingAnimal();
 
         modelUsers = new M_user();
-        readTableUsers();
-        
+
         modelAnimalType = new M_animal_type();
-        readTableAnimalType();
-        
+
         modelTypePet = new M_type_pet();
-        readTableTypePet();
-        
+
     }
 
     //<editor-fold defaultstate="collapse" desc="Account">
@@ -91,6 +95,7 @@ public class admin {
             viewRecordingAnimal.setVisible(false);
             viewAccount.setVisible(true);
             viewAnimalType.setVisible(false);
+            readTableUsers();
         }
     }
 
@@ -105,7 +110,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menambahkan data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to add data");
         }
     }
 
@@ -116,7 +121,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menghapus data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to delete data");
         }
     }
 
@@ -127,7 +132,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk mengubah data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to update data");
         }
     }
 
@@ -138,7 +143,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk merefresh data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to refresh data");
         }
     }
     //</editor-fold>
@@ -151,6 +156,7 @@ public class admin {
             viewRecordingAnimal.setVisible(true);
             viewAccount.setVisible(false);
             viewAnimalType.setVisible(false);
+            readTableRecordingAnimal();
         }
     }
 
@@ -165,7 +171,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menambahkan data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to add data");
         }
     }
 
@@ -176,7 +182,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk menghapus data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to delete data");
         }
     }
 
@@ -187,7 +193,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk memperbarui data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to update data");
         }
     }
 
@@ -198,7 +204,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewRecordingAnimal, "System belum diprogram untuk merefresh data");
+            JOptionPane.showMessageDialog(viewRecordingAnimal, "The system has not been programmed to refresh data");
         }
     }
     //</editor-fold>
@@ -214,15 +220,50 @@ public class admin {
             viewRecordingAnimal.setVisible(false);
             viewAccount.setVisible(false);
             viewAnimalType.setVisible(true);
+            readTableTypePet();
+            readTableAnimalType();
         }
     }
-    
+
     private void readTableAnimalType() {
         viewAnimalType.setTabelAnimalType(modelAnimalType.readTable_animalType());
     }
-    
+
     private void readTableTypePet() {
         viewAnimalType.setTabelTypePet(modelTypePet.readTable_typePet());
+    }
+
+    private class tabelTypePetListener implements MouseListener {
+
+        public tabelTypePetListener() {
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            idTypePet = viewAnimalType.getIdTypePet(viewAnimalType.getSelectedRowTypePet());
+        }
+
+        //<editor-fold defaultstate="collapse" desc="Unused">
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+        //</editor-fold>
     }
 
     private class addTypePetListener implements ActionListener {
@@ -232,7 +273,16 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menambahkan data");
+            String type_pet = viewAnimalType.getTxtTypePet();
+            if (modelTypePet.create_TypePet(type_pet)) {
+                JOptionPane.showMessageDialog(viewAnimalType, "Type pet added");
+                viewRecordingAnimal.setVisible(false);
+                viewAccount.setVisible(false);
+                viewAnimalType.setVisible(true);
+                readTableTypePet();
+            } else {
+                JOptionPane.showMessageDialog(viewAnimalType, "The type of pet failed to add");
+            }
         }
     }
 
@@ -243,7 +293,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menghapus data");
+            JOptionPane.showMessageDialog(viewAnimalType, "The system has not been programmed to delete data");
         }
     }
 
@@ -254,7 +304,16 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk mengubah data");
+            String type_pet = viewAnimalType.getTxtTypePet();
+            if (modelTypePet.update_TypePet(type_pet, idTypePet)) {
+                JOptionPane.showMessageDialog(viewAnimalType, "Type pet has changed");
+                viewRecordingAnimal.setVisible(false);
+                viewAccount.setVisible(false);
+                viewAnimalType.setVisible(true);
+                readTableTypePet();                
+            } else {
+                JOptionPane.showMessageDialog(viewAnimalType, "Type pet failed to change");
+            }
         }
     }
 
@@ -265,8 +324,44 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk merefresh data");
+            viewRecordingAnimal.setVisible(false);
+            viewAccount.setVisible(false);
+            viewAnimalType.setVisible(true);
+            readTableTypePet();
         }
+    }
+
+    private class tabelAnimalTypeListener implements MouseListener {
+
+        public tabelAnimalTypeListener() {
+        }
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            idAnimalType = viewAnimalType.getIdAnimalType(viewAnimalType.getSelectedRowAnimalType());
+        }
+
+        //<editor-fold defaultstate="collapse" desc="Unused">
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+        //</editor-fold>
     }
 
     private class addAnimalTypeListener implements ActionListener {
@@ -276,7 +371,16 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menambahkan data");
+            String animal_type = viewAnimalType.getTxtAnimalType();
+            if (modelAnimalType.create_AnimalType(animal_type)) {
+                JOptionPane.showMessageDialog(viewAnimalType, "Animal Type added");
+                viewRecordingAnimal.setVisible(false);
+                viewAccount.setVisible(false);
+                viewAnimalType.setVisible(true);
+                readTableAnimalType();
+            } else {
+                JOptionPane.showMessageDialog(viewAnimalType, "The type of animal failed to add");
+            }
         }
     }
 
@@ -287,7 +391,7 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk menghapus data");
+            JOptionPane.showMessageDialog(viewAnimalType, "The system has not been programmed to delete data");
         }
     }
 
@@ -298,7 +402,16 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk mengubah data");
+            String animal_type = viewAnimalType.getTxtAnimalType();
+            if (modelAnimalType.update_AnimalType(animal_type, idAnimalType)) {
+                JOptionPane.showMessageDialog(viewAnimalType, "Animal type has changed");
+                viewRecordingAnimal.setVisible(false);
+                viewAccount.setVisible(false);
+                viewAnimalType.setVisible(true);
+                readTableAnimalType();                
+            } else {
+                JOptionPane.showMessageDialog(viewAnimalType, "Animal type failed to change");
+            }
         }
     }
 
@@ -309,9 +422,12 @@ public class admin {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(viewAnimalType, "System belum diprogram untuk merefresh data");
+            viewRecordingAnimal.setVisible(false);
+            viewAccount.setVisible(false);
+            viewAnimalType.setVisible(true);
+            readTableAnimalType();
         }
     }
     //</editor-fold>
-    
+
 }

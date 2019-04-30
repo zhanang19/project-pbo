@@ -87,9 +87,14 @@ public class animal_type extends javax.swing.JFrame {
         tabelTypePet.addMouseListener(m);
     }
 
-    public int getBarisTerpilihTypePet() {
+    public int getSelectedRowTypePet() {
         return tabelTypePet.getSelectedRow();
+    }    
+    
+    public int getIdTypePet(int row) {
+        return Integer.parseInt(tabelTypePet.getValueAt(row, 0).toString());
     }
+    
     public void setTabelAnimalType(DefaultTableModel t) {
         tabelAnimalType.setModel(t);
     }
@@ -98,8 +103,23 @@ public class animal_type extends javax.swing.JFrame {
         tabelAnimalType.addMouseListener(m);
     }
 
-    public int getBarisTerpilihAnimalType() {
+    public int getSelectedRowAnimalType() {
         return tabelAnimalType.getSelectedRow();
+    }
+    
+    public int getIdAnimalType(int row) {
+        return Integer.parseInt(tabelAnimalType.getValueAt(row, 0).toString());
+    }
+    //</editor-fold>
+    
+    //<editor-fold defaultstate="collapse" desc="GET">
+
+    public String getTxtAnimalType() {
+        return txtAnimalType.getText();
+    }
+
+    public String getTxtTypePet() {
+        return txtTypePet.getText();
     }
     //</editor-fold>
 

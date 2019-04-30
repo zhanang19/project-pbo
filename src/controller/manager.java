@@ -12,6 +12,7 @@ import view.profil_manager;
 import view.animalCare_manager;
 import view.recordingAnimal_manager;
 import model.M_recording_animal;
+import model.M_animal_care;
 
 /**
  *
@@ -23,6 +24,7 @@ public class manager {
     private final animalCare_manager viewAnimalCare;
     private final recordingAnimal_manager viewRecordingAnimal;
     private final M_recording_animal modelAnimal;
+    private final M_animal_care modelAnimalCare;
 
     public manager() {
         viewProfil = new profil_manager();
@@ -46,7 +48,10 @@ public class manager {
         viewRecordingAnimal.logoutListener(new logout(viewRecordingAnimal));
 
         modelAnimal = new M_recording_animal();
-        readTableRecordingAnimal();
+        readTableRecordingAnimal();        
+        
+        modelAnimalCare = new M_animal_care();
+        readTablAnimalCare();
     }
     
     //<editor-fold defaultstate="collapse" desc="Profil">
@@ -134,7 +139,8 @@ public class manager {
         }
     }
     //</editor-fold>
-
+    
+    //<editor-fold defaultstate="collapse" desc="Animal Care">
     private class animalCareLisener implements ActionListener {
 
         public animalCareLisener() {
@@ -147,4 +153,9 @@ public class manager {
             viewAnimalCare.setVisible(true);
         }
     }
+    
+    private void readTablAnimalCare() {
+        viewAnimalCare.setTabel(modelAnimalCare.readTable_animalCare());
+    }
+    //</editor-fold>
 }

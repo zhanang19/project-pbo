@@ -8,8 +8,6 @@ package view;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
-import javax.swing.JTextField;
-import javax.swing.event.AncestorListener;
 
 /**
  *
