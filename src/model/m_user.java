@@ -18,6 +18,7 @@ import main.config;
 public class m_user {
 
     private final Connection DBConnection;
+    private int idUser;
     
     public m_user() {
         // get and set connection to local variable
@@ -73,20 +74,21 @@ public class m_user {
     }
     
     public int login(String username, String password) {
-        String query = "SELECT level FROM public.users WHERE name=? AND password=?;";
-        int tingkatan = 0;
+        String query = "SELECT id, level FROM public.users WHERE name=? AND password=?;";
+        int level = 0;
         try {
             PreparedStatement st = DBConnection.prepareStatement(query);
             st.setString(1, username);
             st.setString(2, password);
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                tingkatan = rs.getInt(1);
+                idUser = rs.getInt(1);
+                level = rs.getInt(2);
             }
             
         } catch (SQLException e) {
             System.out.println("Something was wrong. Error: " + e);
         }
-        return tingkatan;
+        return level;
     }       
 }

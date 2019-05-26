@@ -36,6 +36,7 @@ public class m_animal_care {
             "Weight",
             "Body Length",
             "Chest Size",
+            "Height",
             "Comment",
             "Timestamp"
         };

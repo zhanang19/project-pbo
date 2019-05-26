@@ -60,8 +60,8 @@ public class users {
             String username = viewLogin.getTxtUsername();
             String password = viewLogin.getTxtPassword();
 
-            int tingkatan = model.login(username, password);
-            switch (tingkatan) {
+            int level = model.login(username, password);
+            switch (level) {
                 case 1:
                     admin admin = new controller.admin();
                     viewLogin.dispose();
